@@ -42,7 +42,7 @@ class FullList extends Component {
 
     static navigationOptions = ({ navigation }) => {
         const id = navigation.getParam('id', 0);
-        return {headerTitle: `${(id === 1) ? 'Newest Dawgz'
+        return {title: `${(id === 1) ? 'Newest Dawgz'
             : (id === 2) ? 'Bottom Dawgz'
             : 'Top Dawgz'}`}
      };

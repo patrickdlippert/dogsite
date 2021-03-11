@@ -25,6 +25,17 @@ import image22 from '../assets/images/dogs/dog22.jpg';
 import image23 from '../assets/images/dogs/dog23.jpg';
 import image24 from '../assets/images/dogs/dog24.jpg';
 import image25 from '../assets/images/dogs/dog25.jpg';
+import image26 from '../assets/images/dogs/dog26.jpg';
+import image27 from '../assets/images/dogs/dog27.jpg';
+import image28 from '../assets/images/dogs/dog28.jpg';
+import image29 from '../assets/images/dogs/dog29.jpg';
+import image30 from '../assets/images/dogs/dog30.jpg';
+import image31 from '../assets/images/dogs/dog31.jpg';
+import image32 from '../assets/images/dogs/dog32.jpg';
+import image33 from '../assets/images/dogs/dog33.jpg';
+import image34 from '../assets/images/dogs/dog34.jpg';
+import image35 from '../assets/images/dogs/dog35.jpg';
+import image36 from '../assets/images/dogs/dog36.jpg';
 
 
 export const DOGS = [
@@ -235,7 +246,96 @@ export const DOGS = [
     name:"Mittens",
     image: image25,
     rating: 1.2,
-    date: "2019-12-23T18:12Z",
+    date: "2020-12-13T18:12Z",
     description: "He's always having a bad hair day!"
   },
+  {
+    id: 26,
+    name:"Molly",
+    image: image26,
+    rating: 4.3,
+    date: "2020-07-18T18:12Z",
+    description: "My loveable pooch. What a sweetheart!"
+  },
+  {
+    id: 27,
+    name:"Frida",
+    image: image27,
+    rating: 3.9,
+    date: "2020-05-18T18:12Z",
+    description: "My loveable pooch. What a sweetheart!"
+  },
+  {
+    id: 28,
+    name:"Fritz",
+    image: image28,
+    rating: 3.8,
+    date: "2020-06-18T18:12Z",
+    description: "My loveable pooch. What a sweetheart!"
+  },
+  {
+    id: 29,
+    name:"Baron",
+    image: image29,
+    rating: 3.4,
+    date: "2020-07-19T18:12Z",
+    description: "My loveable pooch. What a sweetheart!"
+  },
+  {
+    id: 30,
+    name:"Speedy",
+    image: image30,
+    rating: 3.3,
+    date: "2020-08-11T18:12Z",
+    description: "He's always having a bad hair day!"
+  },
+  {
+    id: 31,
+    name:"Bugs",
+    image: image31,
+    rating: 3.6,
+    date: "2021-01-14T18:12Z",
+    description: "He's always having a bad hair day!"
+  },
+  {
+    id: 32,
+    name:"Pete",
+    image: image32,
+    rating: 3.4,
+    date: "2021-01-10T18:12Z",
+    description: "He's always having a bad hair day!"
+  },
+
+  {
+    id: 33,
+    name:"Mr. Teeth",
+    image: image33,
+    rating: 1.2,
+    date: "2019-12-11T18:12Z",
+    description: "He has quite the smile!"
+  },
+  {
+    id: 34,
+    name:"Sasha",
+    image: image34,
+    rating: 4.0,
+    date: "2021-01-07T18:12Z",
+    description: "He's always having a bad hair day!"
+  },
+  {
+    id: 35,
+    name:"Joe",
+    image: image35,
+    rating: 3.7,
+    date: "2020-12-13T18:12Z",
+    description: "He's always having a bad hair day!"
+  },
+  {
+    id: 36,
+    name:"Teddy",
+    image: image36,
+    rating: 5.0,
+    date: "2020-11-23T18:12Z",
+    description: "The sweetest and cutest miniature Poodle on Earth!"
+  }
 ];

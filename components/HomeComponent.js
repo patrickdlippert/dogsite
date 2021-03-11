@@ -8,53 +8,6 @@ import CardCarousel from './CardCarouselComponent';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons'
 
-const styles = StyleSheet.create({
-    gridView: {
-      marginTop: 0,
-      flex: 1,
-    },
-    itemContainer: {
-      justifyContent: 'flex-end',
-      borderRadius: 5,
-      padding: 0,
-      height: 150,
-    },
-    itemName: {
-      fontSize: 16,
-      color: '#fff',
-      textShadowColor: 'black', 
-      textShadowOffset: { width: -1, height: 1 },
-      textShadowRadius: 3, 
-      fontWeight: '800'
-    },
-    itemCode: {
-      fontWeight: '600',
-      fontSize: 12,
-      color: '#fff'
-    },
-    sectionHeader: {
-      flex: 1,
-      fontSize: 15,
-      fontWeight: '600',
-      alignItems: 'center',
-      backgroundColor: '#636e72',
-      color: 'white',
-      padding: 10
-    },
-    sectionFooter: {
-      justifyContent: 'center',
-      flex: 1,
-      fontSize: 15,
-      fontWeight: '600',
-      textAlign: 'right',
-      backgroundColor: 'white',
-      color: 'black',
-      paddingBottom: 10,
-      paddingRight: 10
-    }
-  });
-
-
 class Home extends Component {
 
     constructor(props) {
@@ -78,16 +31,15 @@ class Home extends Component {
                     <TouchableOpacity onPress={() => navigate('HighlightInfo', { highlight: item }  )} >
                     <ImageBackground
                         source={item.image}
-
+                        borderRadius={10}
                         style={{
                             alignSelf: 'center',
                             height: 150,
                             width: 120,
-                            borderWidth: 1,
 
                           }}
                     />
-                     <View style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, justifyContent: 'flex-end'}}>
+                     <View style={{position: 'absolute', top: 0, left: 4, right: 0, bottom: 0, justifyContent: 'flex-end'}}>
                         <Text style={styles.itemName}>
                           {item.name}
                         </Text>
@@ -146,5 +98,51 @@ class Home extends Component {
         );
     }
 }
+
+const styles = StyleSheet.create({
+  gridView: {
+    marginTop: 0,
+    flex: 1,
+  },
+  itemContainer: {
+    justifyContent: 'flex-end',
+    borderRadius: 5,
+    padding: 0,
+    height: 150,
+  },
+  itemName: {
+    fontSize: 16,
+    color: '#fff',
+    textShadowColor: 'black', 
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 3, 
+    fontWeight: '800'
+  },
+  itemCode: {
+    fontWeight: '600',
+    fontSize: 12,
+    color: '#fff'
+  },
+  sectionHeader: {
+    flex: 1,
+    fontSize: 15,
+    fontWeight: '600',
+    alignItems: 'center',
+    backgroundColor: '#636e72',
+    color: 'white',
+    padding: 10
+  },
+  sectionFooter: {
+    justifyContent: 'center',
+    flex: 1,
+    fontSize: 15,
+    fontWeight: '600',
+    textAlign: 'right',
+    backgroundColor: 'white',
+    color: 'black',
+    paddingBottom: 10,
+    paddingRight: 10
+  }
+});
 
 export default Home;

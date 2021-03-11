@@ -8,13 +8,16 @@ import FullList from './FullListComponent';
 import { View, Platform, Image } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
+import { NavigationContainer } from '@react-navigation/native';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 function LogoTitle() {
     return (
-        <View style={{alignItems: 'center'}}>
+        <View style={{alignItems: 'center', backgroundColor: '#D5FAFA'}}>
         <Image
             style={{ width: 250, height: 50 }}
             source={require('../assets/images/dawgr-logo.png')}
+            resizeMode='contain'
         />
       </View>
     );
@@ -42,7 +45,7 @@ const MainNavigator = createStackNavigator(
 );
 
 
-
+const Tab = createMaterialTopTabNavigator();
 
 const AppNavigator = createAppContainer(MainNavigator);
 
