@@ -7,6 +7,7 @@ import { SPONSORS } from '../shared/sponsors';
 import CardCarousel from './CardCarouselComponent';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons'
+import { startClock } from 'react-native-reanimated';
 
 class Home extends Component {
 
@@ -31,13 +32,7 @@ class Home extends Component {
                     <TouchableOpacity onPress={() => navigate('HighlightInfo', { highlight: item }  )} >
                     <ImageBackground
                         source={item.image}
-                        borderRadius={10}
-                        style={{
-                            alignSelf: 'center',
-                            height: 150,
-                            width: 120,
-
-                          }}
+                        style={styles.itemImage}
                     />
                      <View style={{position: 'absolute', top: 0, left: 4, right: 0, bottom: 0, justifyContent: 'flex-end'}}>
                         <Text style={styles.itemName}>
@@ -109,6 +104,15 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     padding: 0,
     height: 150,
+  },
+ itemImage: {
+    alignSelf: 'center',
+    height: 150,
+    width: 120,
+    overflow: 'hidden',
+    borderColor: '#636e72',
+    borderWidth: 1,
+    borderRadius: 5
   },
   itemName: {
     fontSize: 16,

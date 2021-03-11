@@ -6,31 +6,6 @@ import { SPONSORS } from '../shared/sponsors';
 import CardCarousel from './CardCarouselComponent';
 
 
-const styles = StyleSheet.create({
-    gridView: {
-      marginTop: 10,
-      flex: 1,
-    },
-    itemContainer: {
-      justifyContent: 'flex-end',
-      borderRadius: 5,
-      padding: 10,
-      height: 150,
-    },
-    itemName: {
-        fontSize: 16,
-        color: '#fff',
-        textShadowColor: 'black', 
-        textShadowOffset: { width: -1, height: 1 },
-        textShadowRadius: 3, 
-        fontWeight: '800'
-    },
-    itemCode: {
-      fontWeight: '600',
-      fontSize: 12,
-      color: '#fff',
-    },
-  });
 
 class FullList extends Component {
     constructor(props) {
@@ -57,14 +32,7 @@ class FullList extends Component {
                     <TouchableOpacity onPress={() => navigate('HighlightInfo', { highlight: item }  )} >
                     <ImageBackground
                         source={item.image}
-
-                        style={{
-                            alignSelf: 'center',
-                            height: 150,
-                            width: 120,
-                            borderWidth: 1,
-
-                          }}
+                        style={styles.itemImage}
                     />
                      <View style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, justifyContent: 'flex-end'}}>
                         <Text style={styles.itemName}>
@@ -96,5 +64,40 @@ class FullList extends Component {
         );
     }
 }
+
+const styles = StyleSheet.create({
+    gridView: {
+        marginTop: 0,
+        flex: 1,
+    },
+    itemContainer: {
+        justifyContent: 'flex-end',
+        borderRadius: 5,
+        padding: 0,
+        height: 150,
+    },
+    itemImage: {
+        alignSelf: 'center',
+        height: 150,
+        width: 120,
+        overflow: 'hidden',
+        borderColor: '#000',
+        borderWidth: 1,
+        borderRadius: 1
+    },
+    itemName: {
+        fontSize: 16,
+        color: '#fff',
+        textShadowColor: 'black', 
+        textShadowOffset: { width: -1, height: 1 },
+        textShadowRadius: 3, 
+        fontWeight: '800'
+    },
+    itemCode: {
+        fontWeight: '600',
+        fontSize: 12,
+        color: '#fff',
+    },
+  });
 
 export default FullList;
