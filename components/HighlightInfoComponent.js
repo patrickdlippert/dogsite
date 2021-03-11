@@ -8,11 +8,11 @@ function RenderHighlight({highlight}) {
         
         return (
             <Card 
-                featuredTitle={highlight.name}
+
                 image={highlight.image}
                 imageStyle={{
                     width: "100%",
-                    height: 200,
+                    height: 300,
                    resizeMode: 'cover'
                   }}
             >
@@ -38,9 +38,17 @@ class HighlightInfo extends Component {
         };
     }
 
-    static navigationOptions = {
-        title: 'Highlight Information'
-    }
+   // static navigationOptions = {
+  //      title: 'Highlight Information'
+ //   }
+
+    static navigationOptions = ({ navigation }) => { 
+        const highlight = navigation.getParam('highlight', [] );
+        return {
+            title: `${highlight.name}`
+        }
+     };
+
 
     render() {
         const highlight = this.props.navigation.getParam('highlight');

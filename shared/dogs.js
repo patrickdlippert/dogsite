@@ -36,7 +36,12 @@ import image33 from '../assets/images/dogs/dog33.jpg';
 import image34 from '../assets/images/dogs/dog34.jpg';
 import image35 from '../assets/images/dogs/dog35.jpg';
 import image36 from '../assets/images/dogs/dog36.jpg';
-
+import image37 from '../assets/images/dogs/dog37.jpg';
+import image38 from '../assets/images/dogs/dog38.jpg';
+import image39 from '../assets/images/dogs/dog39.jpg';
+import image40 from '../assets/images/dogs/dog40.jpg';
+import image41 from '../assets/images/dogs/dog41.jpg';
+import image42 from '../assets/images/dogs/dog42.jpg';
 
 export const DOGS = [
     {
@@ -206,7 +211,7 @@ export const DOGS = [
     image: image20,
     rating: 1.0,
     date: "2019-08-18T18:12Z",
-    description: "He's always having a bad hair day!"
+    description: "If you think you've had a bad day, try walking in my paws!"
   },
   {
     id: 21,
@@ -295,7 +300,7 @@ export const DOGS = [
     image: image31,
     rating: 3.6,
     date: "2021-01-14T18:12Z",
-    description: "He's always having a bad hair day!"
+    description: "How about a big sloppy kiss?"
   },
   {
     id: 32,
@@ -305,7 +310,6 @@ export const DOGS = [
     date: "2021-01-10T18:12Z",
     description: "He's always having a bad hair day!"
   },
-
   {
     id: 33,
     name:"Mr. Teeth",
@@ -337,5 +341,53 @@ export const DOGS = [
     rating: 5.0,
     date: "2020-11-23T18:12Z",
     description: "The sweetest and cutest miniature Poodle on Earth!"
+  },
+  {
+    id: 37,
+    name:"Annie",
+    image: image37,
+    rating: 3.5,
+    date: "2020-05-01T18:12Z",
+    description: "My loveable pooch. What a sweetheart!"
+  },
+  {
+    id: 38,
+    name:"Snowball",
+    image: image38,
+    rating: 4.8,
+    date: "2020-02-18T08:12Z",
+    description: "Westie puppies are simply the cutest things ever!"
+  },
+  {
+    id: 39,
+    name:"Angus",
+    image: image39,
+    rating: 4.3,
+    date: "2020-08-09T18:12Z",
+    description: "My loveable pooch. What a sweetheart!"
+  },
+  {
+    id: 40,
+    name:"Pepper",
+    image: image40,
+    rating: 4.1,
+    date: "2021-03-10T19:12Z",
+    description: "Representing the Highlands, Pepper is a great Scottie."
+  },
+  {
+    id: 41,
+    name:"Blondie",
+    image: image41,
+    rating: 3.6,
+    date: "2021-01-14T18:12Z",
+    description: "He's a proud Cairn Terrier!"
+  },
+  {
+    id: 42,
+    name:"Toto",
+    image: image42,
+    rating: 3.9,
+    date: "2021-01-10T18:12Z",
+    description: "He may not be in Oz, but he's perfect here at home."
   }
 ];

@@ -19,7 +19,19 @@ class Home extends Component {
     }
 
     static navigationOptions = {
-        title: 'Home'
+        title: 'Home',
+        headerStyle: {
+          backgroundColor: '#9020D1',
+          height: 30,
+        },
+
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          textAlign: 'center',
+          flex: 1,
+          alignSelf: 'center',
+          fontWeight: 'bold',
+        },
     };
 
 
