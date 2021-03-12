@@ -11,9 +11,9 @@ export const SPONSORS = [
     {
         id: 0,
         name: "Dirty Dave's Pizza",
-        displayName: false,
+        displayName: true,
         image: image0,
-        featured: false,
+        featured: true,
         description: "Pizza Parlor in Lacey, WA",
         url: 'https://www.dirtydavespizza.com/'
     },

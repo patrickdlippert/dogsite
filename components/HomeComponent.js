@@ -31,7 +31,7 @@ class Home extends Component {
           flex: 1,
           alignSelf: 'center',
           fontWeight: 'bold',
-        },
+        }
     };
 
 

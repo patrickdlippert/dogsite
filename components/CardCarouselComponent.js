@@ -6,7 +6,7 @@ import Slick from 'react-native-slick';
 const styles = StyleSheet.create({
   wrapper: {
     height: 275
-},
+  },
   slide1: {
     flex: 1,
     backgroundColor: '#5637DD',

@@ -20,7 +20,12 @@ class FullList extends Component {
         return {
             title: `${(id === 1) ? 'Newest Dawgz'
                 : (id === 2) ? 'Bottom Dawgz'
-                : 'Top Dawgz'}`}
+                : 'Top Dawgz'}`,
+            headerTitleStyle: {
+                flex: 1,
+                fontWeight: 'bold',
+            }
+         }
      };
 
 
