@@ -1,41 +1,24 @@
 import React, { Component } from 'react';
 import { View, Text, ImageBackground, StyleSheet, TouchableOpacity } from 'react-native';
 import { FlatGrid } from 'react-native-super-grid';
-import { DOGS } from '../shared/dogs';
 import { SPONSORS } from '../shared/sponsors';
-import CardCarousel from './CardCarouselComponent';
-
-
 
 class FullList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            dogs: DOGS
+            sponsors: SPONSORS
         };
     }
 
-    static navigationOptions = ({ navigation }) => {
-        const id = navigation.getParam('id', 0);
-        return {
-            title: `${(id === 1) ? 'Newest Dawgz'
-                : (id === 2) ? 'Bottom Dawgz'
-                : 'Top Dawgz'}`,
-            headerTitleStyle: {
-                flex: 1,
-                fontWeight: 'bold',
-            }
-         }
-     };
-
 
     render() {
-        const id = this.props.navigation.getParam('id', 0);
+        const id = this.props.route.params.section.id;
         const { navigate } = this.props.navigation;
         const renderImageItem = ({item}) => {
             return (
                 <View style={styles.itemContainer}>
-                    <TouchableOpacity onPress={() => navigate('HighlightInfo', { highlight: item }  )} >
+                    <TouchableOpacity onPress={() => navigate('DogDetail', { dog: item }  )} >
                     <ImageBackground
                         source={item.image}
                         style={styles.itemImage}
@@ -50,19 +33,11 @@ class FullList extends Component {
             );
         };
 
-        const dataTop = [...this.state.dogs].sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
-        const dataNew = [...this.state.dogs].sort((a, b) => new Date(b.date) - new Date(a.date));
-        const dataBottom = [...this.state.dogs].sort((a, b) => parseFloat(a.rating) - parseFloat(b.rating));
-
-
 
         return (
             <FlatGrid
                 itemDimension={90}
-                data={ id === 0 ? dataTop
-                    : id === 1 ? dataNew
-                    : id === 2 ? dataBottom
-                    : dataTop }
+                data={this.props.route.params.section.pageData}
                 style={styles.gridView}
                 spacing={10}
                 renderItem={renderImageItem}

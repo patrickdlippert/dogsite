@@ -42,6 +42,13 @@ import image39 from '../assets/images/dogs/dog39.jpg';
 import image40 from '../assets/images/dogs/dog40.jpg';
 import image41 from '../assets/images/dogs/dog41.jpg';
 import image42 from '../assets/images/dogs/dog42.jpg';
+import image43 from '../assets/images/dogs/dog43.jpg';
+import image44 from '../assets/images/dogs/dog44.jpg';
+import image45 from '../assets/images/dogs/dog45.jpg';
+import image46 from '../assets/images/dogs/dog46.jpg';
+import image47 from '../assets/images/dogs/dog47.jpg';
+import image48 from '../assets/images/dogs/dog48.jpg';
+import image49 from '../assets/images/dogs/dog49.jpg';
 
 export const DOGS = [
     {
@@ -70,7 +77,7 @@ export const DOGS = [
     },
     {
         id: 3,
-        name:'Minny',
+        name:'Minnie',
         image: image3,
         rating: 4.4,
         date: "2019-02-18T18:12Z",
@@ -389,5 +396,61 @@ export const DOGS = [
     rating: 3.9,
     date: "2021-01-10T18:12Z",
     description: "He may not be in Oz, but he's perfect here at home."
+  },
+  {
+    id: 43,
+    name:"Millie",
+    image: image43,
+    rating: 4.2,
+    date: "2019-12-11T18:19Z",
+    description: "She's the Yorkie with the cutest disposition."
+  },
+  {
+    id: 44,
+    name:"Princess",
+    image: image44,
+    rating: 4.0,
+    date: "2021-01-07T18:10Z",
+    description: "You can't deny that this Yorkie pup is the best."
+  },
+  {
+    id: 45,
+    name:"Bobo",
+    image: image45,
+    rating: 3.7,
+    date: "2019-04-13T08:12Z",
+    description: "He's cute as a bug!"
+  },
+  {
+    id: 46,
+    name:"Lobo",
+    image: image46,
+    rating: 3.9,
+    date: "2020-11-23T18:12Z",
+    description: "This German Shepherd is the most loyal companion dog we've ever had."
+  },
+  {
+    id: 47,
+    name:"Helena",
+    image: image47,
+    rating: 3.8,
+    date: "2020-05-01T18:12Z",
+    description: "She's a big dog, but as gentle as can be."
+  },
+  {
+    id: 48,
+    name:"Yellow",
+    image: image48,
+    rating: 4.4,
+    date: "2020-07-09T08:12Z",
+    description: "Golden Retrievers are smart dogs."
+  },
+  {
+    id: 49,
+    name:"Goldie",
+    image: image49,
+    rating: 4.3,
+    date: "2020-07-10T18:12Z",
+    description: "My loveable pooch. What a sweetheart!"
   }
 ];

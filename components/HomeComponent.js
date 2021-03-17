@@ -4,10 +4,9 @@ import { FlatGrid, SectionGrid } from 'react-native-super-grid';
 import { Card, Tile } from 'react-native-elements';
 import { DOGS } from '../shared/dogs';
 import { SPONSORS } from '../shared/sponsors';
-import CardCarousel from './CardCarouselComponent';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons'
-import { startClock } from 'react-native-reanimated';
+
 
 class Home extends Component {
 
@@ -41,7 +40,7 @@ class Home extends Component {
         const renderImageItem = ({item}) => {
             return (
                 <View style={styles.itemContainer}>
-                    <TouchableOpacity onPress={() => navigate('HighlightInfo', { highlight: item }  )} >
+                    <TouchableOpacity onPress={() => navigate('DogDetail', { dog: item } )} >
                     <ImageBackground
                         source={item.image}
                         style={styles.itemImage}
@@ -66,19 +65,19 @@ class Home extends Component {
                 sections={[
                     {
                       id: 0,
-                      title: 'Top Dawgs',
+                      title: "Top Dawgs",
                       data: dataTop.slice(0, 6),
                       pageData: dataTop
                     },
                     {
                       id: 1,
-                      title: 'Newest Posts',
+                      title: "Newest Posts",
                       data: dataNew.slice(0, 6),
                       pageData: dataNew
                     },
                     {
                       id: 2,
-                      title: 'Bottom Dawgs',
+                      title: "Bottom Dawgs",
                       data: dataBottom.slice(0, 6),
                       pageData: dataBottom
                     },
@@ -94,7 +93,7 @@ class Home extends Component {
                     <Text style={styles.sectionHeader}>{section.title}</Text>
                   )}
                 renderSectionFooter={({ section }) => (
-                  <TouchableOpacity onPress={() => navigate('FullList', { id: section.id }, { data: section.pageData }  )} >
+                  <TouchableOpacity onPress={() => navigate('FullList', { section: section } )} >
                     <View style={{textAlignVertical: 'center'}}>
                       <Text style={styles.sectionFooter}>See more <FontAwesomeIcon icon={  faLongArrowAltRight } size={ 16 } />
                       </Text>
