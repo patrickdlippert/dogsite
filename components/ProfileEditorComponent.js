@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, ScrollView, Alert, TextInput } from 'react-native';
+import { Text, View, StyleSheet, ScrollView, Alert, TextInput, KeyboardAvoidingView } from 'react-native';
 import { Button } from 'react-native-elements';
 import {Picker} from '@react-native-picker/picker';
 //import { TextInput } from 'react-native-paper';
 import SimpleImagePicker from './SimpleImagePickerComponent';
+import { KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 
 class ProfileEditor extends Component {
@@ -105,7 +106,7 @@ class ProfileEditor extends Component {
         const imagePath = this.state.imagePath;
 
         return (
-        <ScrollView>
+        <KeyboardAwareScrollView style={{ flex: 1}}>
             <SimpleImagePicker imagePath={imagePath} onImageChange={this.handleImageChange} />
             <View style={styles.formRow}>
                 <Text style={styles.formLabel}>Dog Breed</Text>
@@ -187,8 +188,7 @@ class ProfileEditor extends Component {
                     title='Cancel'
                 />
             </View>
-
-        </ScrollView>
+        </KeyboardAwareScrollView>
         );
     }
 }
