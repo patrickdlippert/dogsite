@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Text, View, Image } from 'react-native';
+import { Button, Text, View, Image, LogBox } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -9,6 +9,10 @@ import Home from './HomeComponent';
 import DogDetail from './DogDetailComponent';
 import FullList from './FullListComponent';
 import ProfileEditor from './ProfileEditorComponent';
+
+LogBox.ignoreLogs(['Your project is accessing the following APIs from a deprecated global rather than a module import: Constants (expo-constants).']);
+
+
 
 function LogoTitle() {
   return (
@@ -99,6 +103,10 @@ class Main extends Component {
           tabBarOptions={{
               activeTintColor: 'tomato',
               inactiveTintColor: 'gray',
+              labelStyle: {
+                fontSize: 14,
+                fontWeight: "bold"
+              },
               }}>
               <Tab.Screen name="Home" component={HomeStackScreen} />
               <Tab.Screen name="Profile" component={ProfileStackScreen} />

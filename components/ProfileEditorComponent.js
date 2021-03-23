@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, ScrollView, Button, Alert,  TextInput } from 'react-native';
-import { Input } from 'react-native-elements';
+import { Text, View, StyleSheet, ScrollView, Alert, TextInput } from 'react-native';
+import { Button } from 'react-native-elements';
 import {Picker} from '@react-native-picker/picker';
+//import { TextInput } from 'react-native-paper';
 import SimpleImagePicker from './SimpleImagePickerComponent';
 
 
@@ -12,6 +13,7 @@ class ProfileEditor extends Component {
 
         this.state = {
             imagePath: '',
+            dogName: '',
             dogBreed: '',
             comment: ''
         };
@@ -40,6 +42,40 @@ class ProfileEditor extends Component {
                 ],
                 { cancelable: false }
             );
+        } else if (!this.state.dogName) {
+            Alert.alert(
+                'Name Required',
+                "You must enter your dog's name for your profile.",
+                [
+                    {
+                        text: 'Cancel',
+                        onPress: () => console.log('No dog name entered'),
+                        style: 'cancel'
+                    },
+                    {
+                        text: 'OK',
+                        onPress: () => console.log('OK selected. Trying again.'),
+                    }
+                ],
+                { cancelable: false }
+            );
+        } else if (!this.state.dogBreed) {
+            Alert.alert(
+                'Breed Required',
+                "You must enter your dog's breed (or other) for your profile.",
+                [
+                    {
+                        text: 'Cancel',
+                        onPress: () => console.log('No dog breed entered'),
+                        style: 'cancel'
+                    },
+                    {
+                        text: 'OK',
+                        onPress: () => console.log('OK selected. Trying again.'),
+                    }
+                ],
+                { cancelable: false }
+            );
         } else {
             Alert.alert(
                 "Profile Submitted",
@@ -59,6 +95,7 @@ class ProfileEditor extends Component {
     resetForm() {
         this.setState({
             imagePath: '',
+            dogName: '',
             dogBreed: '',
             comment: '' 
         });
@@ -97,36 +134,56 @@ class ProfileEditor extends Component {
                     <Picker.Item label="Shih Tzu" value="shihtzu" />
                     <Picker.Item label="Schnauzer" value="schnauzer" />
                     <Picker.Item label="Staffordshire Bull Terrier" value="sbullterrier" />
+                    <Picker.Item label="Welsh Corgi" value="corgi" />
                     <Picker.Item label="West Highland White Terrier" value="westie" />
                     <Picker.Item label="Yorkie" value="yorkie" />
                     <Picker.Item label="Other" value="other" />
                 </Picker>
             </View>
             <View style={styles.formRow}>
-                <Input
+                <TextInput
+                    required
+                    style={[styles.formInput, {height: 35}]}
+                    mode="outlined"
+                    label="Dog's Name"
+                    autoCompleteType="name"
+                    keyboardType="default"
+                    textContentType="givenName"
+                    placeholder="Dog's Name"
+                    onChangeText={value => this.setState({ dogName: value })}
+                    value = {this.state.dogName}
+                />
+            </View>
+
+            <View style={styles.formRow}>
+                <TextInput
+                    multiline
+                    blurOnSubmit
+                    numberOfLines={5}
+                    style={[styles.formInput, {height: 70, paddingTop: 0}]}
+                    mode="outlined"
+                    label="Comment"
                     placeholder="Comment"
-                    leftIcon={{ type: 'font-awesome', name: 'comment-o' }}
-                    leftIconContainerStyle = {{paddingRight: 10}}
                     onChangeText={value => this.setState({ comment: value })}
                     value = {this.state.comment}
                 />
             </View>
             <View style={styles.buttonSection}>
                 <Button
+                 buttonStyle={styles.buttonSubmit}
                     onPress={() => {
                         this.handleProfile();
                     }}
-                    color='#5637DD'
                     title='Submit'
                 />
             </View>
             <View style={styles.buttonSection}>
                 <Button
+                    buttonStyle={styles.buttonCancel}
                     onPress={() => {
                         this.resetForm();
                         this.props.navigation.navigate('Home');
                     }}
-                    color='#808080'
                     title='Cancel'
                 />
             </View>
@@ -142,15 +199,26 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         flex: 1,
         flexDirection: 'row',
-        margin: 20
+        marginHorizontal: 20,
+        marginVertical: 5
     },
     formLabel: {
-        fontSize: 18,
+        fontSize: 16,
         flex: 1
     },
     formItem: {
         flex: 2,
-        backgroundColor: '#cdcdcd'
+        backgroundColor: '#cdcdcd',
+    },
+    formInput: {
+        flex: 1, 
+        justifyContent: 'flex-start',
+        flexWrap: 'wrap',
+        textAlignVertical: 'top',
+        backgroundColor: '#cdcdcd',
+        padding: 5,
+        borderWidth: 1,
+        borderRadius:5
     },
     modal: { 
         justifyContent: 'center',
@@ -159,9 +227,20 @@ const styles = StyleSheet.create({
     buttonSection: {
         width: '50%',
         alignSelf: 'center',
-        marginBottom: 10
-     }
-  
+        marginTop: 10
+     },
+     buttonSubmit: {
+        backgroundColor: '#5637DD',
+        borderColor: '#000',
+        borderWidth: 1,
+        borderRadius: 5,        
+    },
+    buttonCancel: {
+        backgroundColor: '#808080',
+        borderColor: '#000',
+        borderWidth: 1,
+        borderRadius: 5,       
+    }
 });
 
 export default ProfileEditor;
