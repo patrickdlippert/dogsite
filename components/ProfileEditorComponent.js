@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, ScrollView, Alert, TextInput, KeyboardAvoidingView } from 'react-native';
+import { Text, View, StyleSheet, ScrollView, Alert, TextInput } from 'react-native';
 import { Button } from 'react-native-elements';
 import {Picker} from '@react-native-picker/picker';
 //import { TextInput } from 'react-native-paper';
@@ -177,8 +177,7 @@ class ProfileEditor extends Component {
                     }}
                     title='Submit'
                 />
-            </View>
-            <View style={styles.buttonSection}>
+
                 <Button
                     buttonStyle={styles.buttonCancel}
                     onPress={() => {
@@ -225,9 +224,9 @@ const styles = StyleSheet.create({
         margin: 20
     },
     buttonSection: {
-        width: '50%',
+        width: '75%',
         alignSelf: 'center',
-        marginTop: 10
+        marginTop: 20
      },
      buttonSubmit: {
         backgroundColor: '#5637DD',
@@ -239,7 +238,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#808080',
         borderColor: '#000',
         borderWidth: 1,
-        borderRadius: 5,       
+        borderRadius: 5,
+        marginTop: 5  
     }
 });
 

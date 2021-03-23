@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 
 
 function ConstructCard({resource}) {
-    if( {resource} ) {
+    if( resource ) {
         return(
             <Card
                 featuredTitle={resource.displayName ? resource.name : ''}

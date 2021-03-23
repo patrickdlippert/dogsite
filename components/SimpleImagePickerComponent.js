@@ -79,7 +79,8 @@ const styles = StyleSheet.create({
     },
     title: {
         marginTop: 10,
-        fontSize: 22
+        fontSize: 22,
+        fontWeight: 'bold'
     },
     // add below
     selectButtonContainer: {
@@ -88,7 +89,7 @@ const styles = StyleSheet.create({
     },
     selectButtonTitle: {
         padding: 10,
-        fontSize: 18
+        fontSize: 16
     },
     imageContainer: {
         marginVertical: 10,
