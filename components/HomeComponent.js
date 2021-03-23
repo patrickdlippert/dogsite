@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView, ImageBackground, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
-import { FlatGrid, SectionGrid } from 'react-native-super-grid';
-import { Card, Tile } from 'react-native-elements';
+import { View, Text, ImageBackground, StyleSheet, TouchableOpacity } from 'react-native';
+import { SectionGrid } from 'react-native-super-grid';
 import { DOGS } from '../shared/dogs';
 import { SPONSORS } from '../shared/sponsors';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'

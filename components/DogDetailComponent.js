@@ -3,6 +3,8 @@ import { Text, View, Image } from 'react-native';
 import { Card, Rating } from 'react-native-elements';
 import { SPONSORS } from '../shared/sponsors';
 
+const PAW_IMAGE = require('../assets/images/pawr.png')
+
 function RenderDogDetail({dog}) {
     if (dog) {
         return (
@@ -22,7 +24,17 @@ function RenderDogDetail({dog}) {
                 <Text style={{margin: 10}}>
                     {dog.address}
                 </Text>
-                <Rating imageSize={20} readonly startingValue={dog.rating}  />
+                <Rating
+                    type='custom'
+                    ratingImage={PAW_IMAGE}
+                    ratingColor='#f1c410' 
+                    ratingBackgroundColor='#c8c7c8'
+                    ratingCount={5}
+                    imageSize={25}
+                    startingValue={dog.rating}
+                    readonly
+                    style={{ paddingVertical: 10 }}
+                    />
             </Card>
         );
     }
