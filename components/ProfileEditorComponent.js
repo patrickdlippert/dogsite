@@ -106,8 +106,8 @@ class ProfileEditor extends Component {
 
 
     getImageFromGallery = async () => {
-        const cameraRollPermissions = await Permissions.askAsync(Permissions.CAMERA_ROLL);
-
+        //const cameraRollPermissions = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+        const cameraRollPermissions = await ImagePicker.requestMediaLibraryPermissionsAsync();
         if (cameraRollPermissions.status === 'granted') {
             const capturedImage = await ImagePicker.launchImageLibraryAsync({
                 allowsEditing: true,
@@ -117,12 +117,28 @@ class ProfileEditor extends Component {
                 console.log(capturedImage);
                 this.processImage(capturedImage.uri);
             }
+        } else {
+            Alert.alert(
+                'Image Permissions Required',
+                'Sorry, we need camera roll permissions to make this work. Please check your settings',
+                [
+                    {
+                        text: 'Cancel',
+                        onPress: () => console.log('No image selected'),
+                        style: 'cancel'
+                    },
+                    {
+                        text: 'OK',
+                        onPress: () => console.log('OK selected. Trying again.'),
+                    }
+                ],
+                { cancelable: false }
+            );
         }
     }
 
     writeImageToGallery = async (imgUri) => {
         const cameraRollPermissions = await Permissions.askAsync(Permissions.CAMERA_ROLL);
-
         if (cameraRollPermissions.status === 'granted') {
             const savedImage = await MediaLibrary.saveToLibraryAsync (imgUri);
         }
@@ -136,7 +152,7 @@ class ProfileEditor extends Component {
         );
         console.log(processedImage);
         this.setState({imageUrl: processedImage.uri});
-        this.writeImageToGallery(processedImage.uri);
+        //this.writeImageToGallery(processedImage.uri);
     }
 
 
@@ -179,29 +195,35 @@ class ProfileEditor extends Component {
                     onValueChange={itemValue => this.setState({dogBreed: itemValue})}
                 >
                     <Picker.Item label="Choose a value..." value=""/>
-                    <Picker.Item label="Beagle" value="beagle" />
-                    <Picker.Item label="Border Terrier" value="borderterrier" />
-                    <Picker.Item label="Boxer" value="boxer" />
-                    <Picker.Item label="Bulldog" value="bulldog" />
-                    <Picker.Item label="Cavalier King Charles Spaniel" value="ckcspaniel" />
-                    <Picker.Item label="Chihuahua" value="chihuahua" />
-                    <Picker.Item label="Dachshund" value="dachsund" />
-                    <Picker.Item label="Dalmatian" value="dalmatian" />
-                    <Picker.Item label="English Cocker Spaniel" value="ecspaniel" />
-                    <Picker.Item label="English Springer Spaniel" value="esspaniel" />
-                    <Picker.Item label="German Shepherd" value="germanshepherd" />
-                    <Picker.Item label="Golden Retriever" value="goldenretriever" />
-                    <Picker.Item label="Labrador Retriever" value="labrador" />
-                    <Picker.Item label="Poodle" value="poodle" />
-                    <Picker.Item label="Pug" value="pug" />
-                    <Picker.Item label="Rottweiler" value="rottweiler" />
-                    <Picker.Item label="Shih Tzu" value="shihtzu" />
-                    <Picker.Item label="Schnauzer" value="schnauzer" />
-                    <Picker.Item label="Staffordshire Bull Terrier" value="sbullterrier" />
-                    <Picker.Item label="Welsh Corgi" value="corgi" />
-                    <Picker.Item label="West Highland White Terrier" value="westie" />
-                    <Picker.Item label="Yorkie" value="yorkie" />
-                    <Picker.Item label="Other" value="other" />
+                    <Picker.Item label="Australian Shepherd" value="1" />
+                    <Picker.Item label="Beagle" value="2" />
+                    <Picker.Item label="Border Terrier" value="3" />
+                    <Picker.Item label="Boxer" value="4" />
+                    <Picker.Item label="Bulldog" value="5" />
+                    <Picker.Item label="Cavalier King Charles Spaniel" value="6" />
+                    <Picker.Item label="Chihuahua" value="7" />
+                    <Picker.Item label="Dachshund" value="8" />
+                    <Picker.Item label="Dalmatian" value="9" />
+                    <Picker.Item label="Doberman Pinscher" value="10" />
+                    <Picker.Item label="English Cocker Spaniel" value="11" />
+                    <Picker.Item label="English Springer Spaniel" value="12" />
+                    <Picker.Item label="German Shepherd" value="13" />
+                    <Picker.Item label="Golden Retriever" value="14" />
+                    <Picker.Item label="Irish Setter" value="15" />
+                    <Picker.Item label="Jack Russell Terrier" value="16" />
+                    <Picker.Item label="Labrador Retriever" value="17" />
+                    <Picker.Item label="Pomeranian" value="18" />
+                    <Picker.Item label="Poodle" value="19" />
+                    <Picker.Item label="Pug" value="20" />
+                    <Picker.Item label="Rottweiler" value="21" />
+                    <Picker.Item label="Shih Tzu" value="22" />
+                    <Picker.Item label="Schnauzer" value="23" />
+                    <Picker.Item label="Scottish Terrier" value="24" />
+                    <Picker.Item label="Staffordshire Bull Terrier" value="25" />
+                    <Picker.Item label="Welsh Corgi" value="26" />
+                    <Picker.Item label="West Highland White Terrier" value="27" />
+                    <Picker.Item label="Yorkie" value="28" />
+                    <Picker.Item label="Other" value="29" />
                 </Picker>
             </View>
             <View style={styles.formRow}>

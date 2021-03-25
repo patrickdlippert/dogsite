@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, Image } from 'react-native';
 import { Card, Rating } from 'react-native-elements';
 import { SPONSORS } from '../shared/sponsors';
+import { BREEDS } from '../shared/breeds';
 
 const PAW_IMAGE = require('../assets/images/pawr.png')
 
@@ -22,7 +23,7 @@ function RenderDogDetail({dog}) {
                     {dog.description}
                 </Text>
                 <Text style={{margin: 10}}>
-                    {dog.address}
+                    Dog Breed: {BREEDS[dog.breed].name}
                 </Text>
                 <Rating
                     type='custom'
