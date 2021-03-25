@@ -92,7 +92,7 @@ class Home extends Component {
                     <Text style={styles.sectionHeader}>{section.title}</Text>
                   )}
                 renderSectionFooter={({ section }) => (
-                  <TouchableOpacity onPress={() => navigate('FullList', { section: section } )} >
+                  <TouchableOpacity onPress={() => navigate('FullList', { pageData: section.pageData, title: section.title })} >
                     <View style={{textAlignVertical: 'center'}}>
                       <Text style={styles.sectionFooter}>See more <FontAwesomeIcon icon={  faLongArrowAltRight } size={ 16 } />
                       </Text>

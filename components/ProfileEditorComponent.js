@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, ScrollView, Alert, TextInput } from 'react-native';
+import { Text, View, StyleSheet, ScrollView, Alert, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
 import { Button } from 'react-native-elements';
 import {Picker} from '@react-native-picker/picker';
-//import { TextInput } from 'react-native-paper';
-import SimpleImagePicker from './SimpleImagePickerComponent';
+import * as ImagePicker from 'expo-image-picker';
+import * as Permissions from 'expo-permissions';
+import * as ImageManipulator from 'expo-image-manipulator';
+import * as MediaLibrary from 'expo-media-library';
 import { KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 
@@ -13,20 +15,20 @@ class ProfileEditor extends Component {
         super(props);
 
         this.state = {
-            imagePath: '',
+            imageUrl: '',
             dogName: '',
             dogBreed: '',
             comment: ''
         };
     }
 
-    handleImageChange = (path) => {this.setState({imagePath: path})};
+    handleImageChange = (path) => {this.setState({imageUrl: path})};
     
 
     handleProfile() {
         console.log(JSON.stringify(this.state));
-        //this.props.postProfile(profileId, this.state.imagePath, this.state.dogBreed, this.state.comment);
-        if (!this.state.imagePath) {
+        //this.props.postProfile(profileId, this.state.imageUrl, this.state.dogBreed, this.state.comment);
+        if (!this.state.imageUrl) {
             Alert.alert(
                 'Image Required',
                 'You must select an image for your dog profile',
@@ -95,19 +97,80 @@ class ProfileEditor extends Component {
 
     resetForm() {
         this.setState({
-            imagePath: '',
+            imageUrl: '',
             dogName: '',
             dogBreed: '',
             comment: '' 
         });
     }
 
+
+    getImageFromGallery = async () => {
+        const cameraRollPermissions = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+
+        if (cameraRollPermissions.status === 'granted') {
+            const capturedImage = await ImagePicker.launchImageLibraryAsync({
+                allowsEditing: true,
+                aspect: [1, 1]
+            });
+            if (!capturedImage.cancelled) {
+                console.log(capturedImage);
+                this.processImage(capturedImage.uri);
+            }
+        }
+    }
+
+    writeImageToGallery = async (imgUri) => {
+        const cameraRollPermissions = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+
+        if (cameraRollPermissions.status === 'granted') {
+            const savedImage = await MediaLibrary.saveToLibraryAsync (imgUri);
+        }
+    }
+
+    processImage = async(imgUri) => {
+        const processedImage = await ImageManipulator.manipulateAsync(
+                imgUri,
+                [{resize: {width:400}}],
+                { format: ImageManipulator.SaveFormat.PNG }
+        );
+        console.log(processedImage);
+        this.setState({imageUrl: processedImage.uri});
+        this.writeImageToGallery(processedImage.uri);
+    }
+
+
     render() {
-        const imagePath = this.state.imagePath;
+        const imageUrl = this.state.imageUrl;
 
         return (
         <KeyboardAwareScrollView style={{ flex: 1}}>
-            <SimpleImagePicker imagePath={imagePath} onImageChange={this.handleImageChange} />
+
+            <View style={styles.centerContainer}>
+                <Text style={[styles.title, { color: '#9020d1'}]}>
+                    Tell us about your dawg!
+                </Text>
+
+                <View style={styles.imageContainer}>
+                    <TouchableOpacity  onPress={this.getImageFromGallery}>
+                        {!imageUrl ? (
+                            <ImageBackground
+                                source={require('../assets/images/placeholder.png')}
+                                style={styles.imageBox}
+                                resizeMode='contain'
+                            />
+                        ) : (
+                            <ImageBackground
+                                source={{ uri: imageUrl }}
+                                style={styles.imageBox}
+                                resizeMode='contain'
+                            />
+                        )}
+                    </TouchableOpacity>
+                </View>
+            </View>
+
+
             <View style={styles.formRow}>
                 <Text style={styles.formLabel}>Dog Breed</Text>
                 <Picker
@@ -193,6 +256,29 @@ class ProfileEditor extends Component {
 }
 
 const styles = StyleSheet.create({
+    centerContainer: {
+        flex: 1,
+        alignItems: 'center',
+    },
+    imageContainer: {
+        marginVertical: 10,
+        borderWidth: 0,
+        borderColor: '#ff5555'
+    },
+    imageBox: {
+        alignSelf: 'center',
+        height: 150,
+        width: 150,
+        overflow: 'hidden',
+        borderColor: '#636e72',
+        borderWidth: 1,
+        borderRadius: 5
+    },
+    title: {
+        marginTop: 10,
+        fontSize: 22,
+        fontWeight: 'bold'
+    },
     formRow: {
         alignItems: 'center',
         justifyContent: 'center',

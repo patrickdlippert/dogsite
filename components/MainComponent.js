@@ -52,7 +52,7 @@ function HomeStackScreen() {
       <HomeStack.Screen
         name="FullList" 
         component={FullList}
-        options={({ route }) => ({ title: route.params.section.title })}
+        options={({ route }) => ({ title: route.params.title })}
       />            
    </HomeStack.Navigator>
   );

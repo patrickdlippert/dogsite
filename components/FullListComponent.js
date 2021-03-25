@@ -13,7 +13,6 @@ class FullList extends Component {
 
 
     render() {
-        const id = this.props.route.params.section.id;
         const { navigate } = this.props.navigation;
         const renderImageItem = ({item}) => {
             return (
@@ -37,7 +36,7 @@ class FullList extends Component {
         return (
             <FlatGrid
                 itemDimension={90}
-                data={this.props.route.params.section.pageData}
+                data={this.props.route.params.pageData}
                 style={styles.gridView}
                 spacing={10}
                 renderItem={renderImageItem}
