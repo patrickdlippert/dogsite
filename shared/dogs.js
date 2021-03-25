@@ -62,6 +62,14 @@ import image59 from '../assets/images/dogs/dog59.jpg';
 import image60 from '../assets/images/dogs/dog60.jpg';
 import image61 from '../assets/images/dogs/dog61.jpg';
 import image62 from '../assets/images/dogs/dog62.jpg';
+import image63 from '../assets/images/dogs/dog63.jpg';
+import image64 from '../assets/images/dogs/dog64.jpg';
+import image65 from '../assets/images/dogs/dog65.jpg';
+import image66 from '../assets/images/dogs/dog66.jpg';
+import image67 from '../assets/images/dogs/dog67.jpg';
+import image68 from '../assets/images/dogs/dog68.jpg';
+import image69 from '../assets/images/dogs/dog69.jpg';
+
 
 export const DOGS = [
     {
@@ -77,8 +85,8 @@ export const DOGS = [
         id: 1,
         name: 'Rover',
         image: image1,
-        breed: 26,
-        rating: 4.5,
+        breed: 27,
+        rating: 3.3,
         date: "2019-02-18T18:12Z",
         description: "My loveable pooch. What a sweetheart!"
     },
@@ -612,7 +620,7 @@ export const DOGS = [
     image: image60,
     breed: 24,
     rating: 4.2,
-    date: "2021-01-21T09:19Z",
+    date: "2020-02-21T09:19Z",
     description: "Whatever Bentley wants, he gets. Who could deny this face?"
   },
   {
@@ -621,7 +629,7 @@ export const DOGS = [
     image: image61,
     breed: 24,
     rating: 4.2,
-    date: "2021-03-21T09:19Z",
+    date: "2020-07-21T09:19Z",
     description: "Here's Toby, grommed to perfection."
   },
   {
@@ -632,5 +640,68 @@ export const DOGS = [
     rating: 4.2,
     date: "2021-03-21T09:19Z",
     description: "A fun day out at the park. Milo deserved a treat for being so good."
+  },
+  {
+    id: 63,
+    name:"Shorty",
+    image: image63,
+    breed: 27,
+    rating: 4.5,
+    date: "2021-01-05T09:19Z",
+    description: "Shorty is one playful Corgi pup."
+  },
+  {
+    id: 64,
+    name:"Elf",
+    image: image64,
+    breed: 27,
+    rating: 4.2,
+    date: "2021-01-11T06:19Z",
+    description: "Elf is a magical pup. He can get lost if we don't cut the grass!"
+  },
+  {
+    id: 65,
+    name:"Gordon",
+    image: image65,
+    breed: 27,
+    rating: 4.1,
+    date: "2021-02-05T11:19Z",
+    description: "Gordon is a purebred Corgi, and he does like to be treated like royalty."
+  },
+  {
+    id: 66,
+    name:"Beatrice",
+    image: image66,
+    breed: 27,
+    rating: 3.7,
+    date: "2021-01-05T09:19Z",
+    description: "Bea has really distinctive markings that you don't see on every Corgi."
+  },
+  {
+    id: 67,
+    name:"Zeus",
+    image: image67,
+    breed: 11,
+    rating: 3.6,
+    date: "2021-09-05T09:19Z",
+    description: "Zeus definitly has the attributes of a Greek god, but don't let it get to his head!"
+  },
+  {
+    id: 68,
+    name:"Athena",
+    image: image68,
+    breed: 11,
+    rating: 3.4,
+    date: "2021-01-05T09:19Z",
+    description: "Athena practicing her show stance. She's always on alert and has great instincts."
+  },
+  {
+    id: 69,
+    name:"Jax",
+    image: image69,
+    breed: 11,
+    rating: 4.3,
+    date: "2021-02-05T04:19Z",
+    description: "Doberman puppies are so cute, especially before their ears can point."
   }
 ];
