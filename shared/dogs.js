@@ -683,7 +683,7 @@ export const DOGS = [
     image: image67,
     breed: 11,
     rating: 3.6,
-    date: "2021-09-05T09:19Z",
+    date: "2021-03-24T09:19Z",
     description: "Zeus definitly has the attributes of a Greek god, but don't let it get to his head!"
   },
   {

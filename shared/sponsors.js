@@ -11,9 +11,9 @@ export const SPONSORS = [
     {
         id: 0,
         name: "Dirty Dave's Pizza",
-        displayName: true,
+        displayName: false,
         image: image0,
-        featured: true,
+        featured: false,
         description: "Pizza Parlor in Lacey, WA",
         url: 'https://www.dirtydavespizza.com/'
     },
@@ -41,7 +41,7 @@ export const SPONSORS = [
         displayName: false,
         image: image3,
         featured: false,
-        description: "European Bakery in downtown Olympia, WA",
+        description: "European Bakery in downtown Olympia",
         url: 'https://wagnersoly.com/'
     },
     {
@@ -68,7 +68,7 @@ export const SPONSORS = [
         displayName: false,
         image: image6,
         featured: false,
-        description: "Premier shopping destination in Olympia, WA",
+        description: "Premier shopping destination in Olympia",
         url: 'https://capitalmallolympia.com/'
     },
     {

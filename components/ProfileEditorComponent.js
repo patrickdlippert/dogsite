@@ -7,7 +7,13 @@ import * as Permissions from 'expo-permissions';
 import * as ImageManipulator from 'expo-image-manipulator';
 import * as MediaLibrary from 'expo-media-library';
 import { KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import { postDog } from '../redux/ActionCreators';
+import { connect } from 'react-redux';
 
+
+const mapDispatchToProps = {
+    postDog: (imageurl, dogname, dogbreed, comment) => (postDog(imageurl, dogname, dogbreed, comment))
+};
 
 class ProfileEditor extends Component {
 
@@ -80,6 +86,7 @@ class ProfileEditor extends Component {
                 { cancelable: false }
             );
         } else {
+            this.props.postDog(this.state.imageUrl, this.state.dogName, this.state.dogBreed, this.state.comment);
             Alert.alert(
                 "Profile Submitted",
                 "You're all set! Your dog profile will be posted momentarily.",
@@ -200,30 +207,31 @@ class ProfileEditor extends Component {
                     <Picker.Item label="Border Terrier" value="3" />
                     <Picker.Item label="Boxer" value="4" />
                     <Picker.Item label="Bulldog" value="5" />
-                    <Picker.Item label="Cavalier King Charles Spaniel" value="6" />
-                    <Picker.Item label="Chihuahua" value="7" />
-                    <Picker.Item label="Dachshund" value="8" />
-                    <Picker.Item label="Dalmatian" value="9" />
-                    <Picker.Item label="Doberman Pinscher" value="10" />
-                    <Picker.Item label="English Cocker Spaniel" value="11" />
-                    <Picker.Item label="English Springer Spaniel" value="12" />
-                    <Picker.Item label="German Shepherd" value="13" />
-                    <Picker.Item label="Golden Retriever" value="14" />
-                    <Picker.Item label="Irish Setter" value="15" />
-                    <Picker.Item label="Jack Russell Terrier" value="16" />
-                    <Picker.Item label="Labrador Retriever" value="17" />
-                    <Picker.Item label="Pomeranian" value="18" />
-                    <Picker.Item label="Poodle" value="19" />
-                    <Picker.Item label="Pug" value="20" />
-                    <Picker.Item label="Rottweiler" value="21" />
-                    <Picker.Item label="Shih Tzu" value="22" />
-                    <Picker.Item label="Schnauzer" value="23" />
-                    <Picker.Item label="Scottish Terrier" value="24" />
-                    <Picker.Item label="Staffordshire Bull Terrier" value="25" />
-                    <Picker.Item label="Welsh Corgi" value="26" />
-                    <Picker.Item label="West Highland White Terrier" value="27" />
-                    <Picker.Item label="Yorkie" value="28" />
-                    <Picker.Item label="Other" value="29" />
+                    <Picker.Item label="Cairn Terrier" value="6" />
+                    <Picker.Item label="Cavalier King Charles Spaniel" value="7" />
+                    <Picker.Item label="Chihuahua" value="8" />
+                    <Picker.Item label="Dachshund" value="9" />
+                    <Picker.Item label="Dalmatian" value="10" />
+                    <Picker.Item label="Doberman Pinscher" value="11" />
+                    <Picker.Item label="English Cocker Spaniel" value="12" />
+                    <Picker.Item label="English Springer Spaniel" value="13" />
+                    <Picker.Item label="German Shepherd" value="14" />
+                    <Picker.Item label="Golden Retriever" value="15" />
+                    <Picker.Item label="Irish Setter" value="16" />
+                    <Picker.Item label="Jack Russell Terrier" value="17" />
+                    <Picker.Item label="Labrador Retriever" value="18" />
+                    <Picker.Item label="Pomeranian" value="19" />
+                    <Picker.Item label="Poodle" value="20" />
+                    <Picker.Item label="Pug" value="21" />
+                    <Picker.Item label="Rottweiler" value="22" />
+                    <Picker.Item label="Shih Tzu" value="23" />
+                    <Picker.Item label="Schnauzer" value="24" />
+                    <Picker.Item label="Scottish Terrier" value="25" />
+                    <Picker.Item label="Staffordshire Bull Terrier" value="26" />
+                    <Picker.Item label="Welsh Corgi" value="27" />
+                    <Picker.Item label="West Highland White Terrier" value="28" />
+                    <Picker.Item label="Yorkie" value="29" />
+                    <Picker.Item label="Other" value="30" />
                 </Picker>
             </View>
             <View style={styles.formRow}>
@@ -351,4 +359,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default ProfileEditor;
+export default connect(null, mapDispatchToProps) (ProfileEditor);

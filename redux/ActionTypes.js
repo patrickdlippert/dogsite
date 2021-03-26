@@ -1,0 +1,19 @@
+export const DOGS_LOADING = 'DOGS_LOADING';
+export const ADD_DOGS = 'ADD_DOGS';
+export const DOGDS_FAILED = 'DOGS_FAILED';
+export const ADD_DOG = 'ADD_DOG';
+
+export const ADD_COMMENT = 'ADD_COMMENT';
+export const ADD_COMMENTS = 'ADD_COMMENTS';
+export const COMMENTS_FAILED = 'COMMENTS_FAILED';
+
+export const BREEDS_LOADING = 'BREEDS_LOADING';
+export const ADD_BREEDS = 'ADD_BREEDS';
+export const BREEDS_FAILED = 'BREEDS_FAILED';
+
+export const SPONSORS_LOADING = 'SPONSORS_LOADING';
+export const SPONSORS = 'ADD_SPONSORS';
+export const SPONSORS_FAILED = 'SPONSORS_FAILED';
+
+export const ADD_FAVORITE = 'ADD_FAVORITE';
+export const DELETE_FAVORITE = 'DELETE_FAVORTIE';

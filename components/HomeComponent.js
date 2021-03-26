@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import { View, Text, ImageBackground, StyleSheet, TouchableOpacity } from 'react-native';
 import { SectionGrid } from 'react-native-super-grid';
-import { DOGS } from '../shared/dogs';
-import { SPONSORS } from '../shared/sponsors';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons'
+import { connect } from 'react-redux';
+
+const mapStateToProps = state => {
+  return {
+      dogs: state.dogs,
+      sponsors: state.sponsors
+  };
+};
 
 
 class Home extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            dogs: DOGS
-        };
-    }
 
     static navigationOptions = {
         title: 'Home',
@@ -54,9 +53,9 @@ class Home extends Component {
             );
         };
 
-        const dataTop = [...this.state.dogs].sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
-        const dataNew = [...this.state.dogs].sort((a, b) => new Date(b.date) - new Date(a.date));
-        const dataBottom = [...this.state.dogs].sort((a, b) => parseFloat(a.rating) - parseFloat(b.rating));
+        const dataTop = [...this.props.dogs.dogs].sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
+        const dataNew = [...this.props.dogs.dogs].sort((a, b) => new Date(b.date) - new Date(a.date));
+        const dataBottom = [...this.props.dogs.dogs].sort((a, b) => parseFloat(a.rating) - parseFloat(b.rating));
 
         return (
             <SectionGrid
@@ -159,4 +158,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Home;
+export default connect(mapStateToProps)(Home);

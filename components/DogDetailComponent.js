@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, ScrollView } from 'react-native';
 import { Card, Rating } from 'react-native-elements';
 import { SPONSORS } from '../shared/sponsors';
-import { BREEDS } from '../shared/breeds';
+import { connect } from 'react-redux';
+//import CardCarousel from './CardCarouselComponent';
 
-const PAW_IMAGE = require('../assets/images/pawr.png')
+const PAW_IMAGE = require('../assets/images/pawr.png');
 
-function RenderDogDetail({dog}) {
+const mapStateToProps = state => {
+    return {
+        breeds: state.breeds
+    };
+  };
+
+function RenderDogDetail({dog, breeds}) {
     if (dog) {
         return (
             <Card>
@@ -23,7 +30,7 @@ function RenderDogDetail({dog}) {
                     {dog.description}
                 </Text>
                 <Text style={{margin: 10}}>
-                    Dog Breed: {BREEDS[dog.breed].name}
+                    Dog Breed: {breeds[dog.breed].name}
                 </Text>
                 <Rating
                     type='custom'
@@ -53,10 +60,14 @@ class DogDetail extends Component {
 
     render() {
         const dog = this.props.route.params.dog;
+        const breeds = this.props.breeds.breeds;
+        
         return (
-            <RenderDogDetail dog={dog} />
+            <ScrollView>
+                <RenderDogDetail dog={dog} breeds={breeds} />
+            </ScrollView>
         );
     }
 }
 
-export default DogDetail;
+export default connect(mapStateToProps)(DogDetail);
