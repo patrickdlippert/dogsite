@@ -4,6 +4,22 @@ import { Card } from 'react-native-elements';
 import Slick from 'react-native-slick';
 import { LinearGradient } from 'expo-linear-gradient';
  
+const styles = StyleSheet.create({
+  wrapper: {
+    height: 275
+},
+  slide: {
+    flex: 1,
+
+  },
+  text: {
+    margin: 5,
+    textAlign: 'center', 
+    fontSize: 15,
+    fontWeight: 'bold',
+  }
+});
+
 
 function ConstructCard({resource}) {
     if( {resource} ) {
@@ -59,22 +75,5 @@ function CardCarousel(props) {
     }
     return( <Text> This is failing </Text>) ;
 }
-
-
-const styles = StyleSheet.create({
-    wrapper: {
-      height: 275
-  },
-    slide: {
-      flex: 1,
-  
-    },
-    text: {
-      margin: 5,
-      textAlign: 'center', 
-      fontSize: 15,
-      fontWeight: 'bold',
-    }
-  });
 
 export default CardCarousel;

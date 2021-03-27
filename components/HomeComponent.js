@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, ImageBackground, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, ImageBackground, StyleSheet, TouchableOpacity, ScrollView, Button } from 'react-native';
 import { SectionGrid } from 'react-native-super-grid';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons'
@@ -36,13 +36,16 @@ class Home extends Component {
     render() {
         const { navigate } = this.props.navigation;
         const renderImageItem = ({item}) => {
+          const needsUri = item.image.toString().includes('png'); // Check for full file path vs imported image
+
             return (
                 <View style={styles.itemContainer}>
                     <TouchableOpacity onPress={() => navigate('DogDetail', { dog: item } )} >
-                    <ImageBackground
-                        source={item.image}
-                        style={styles.itemImage}
-                    />
+
+                    {needsUri
+                      ? <ImageBackground source={{uri: item.image}} style={styles.itemImage}/>
+                      : <ImageBackground source={item.image} style={styles.itemImage}/>
+                    }
                      <View style={{position: 'absolute', top: 0, left: 4, right: 0, bottom: 0, justifyContent: 'flex-end'}}>
                         <Text style={styles.itemName}>
                           {item.name}
@@ -58,47 +61,47 @@ class Home extends Component {
         const dataBottom = [...this.props.dogs.dogs].sort((a, b) => parseFloat(a.rating) - parseFloat(b.rating));
 
         return (
-            <SectionGrid
-                itemDimension={90}
-                sections={[
-                    {
-                      id: 0,
-                      title: "Top Dawgs",
-                      data: dataTop.slice(0, 6),
-                      pageData: dataTop
-                    },
-                    {
-                      id: 1,
-                      title: "Newest Posts",
-                      data: dataNew.slice(0, 6),
-                      pageData: dataNew
-                    },
-                    {
-                      id: 2,
-                      title: "Bottom Dawgs",
-                      data: dataBottom.slice(0, 6),
-                      pageData: dataBottom
-                    },
-                  ]}
+          <SectionGrid
+              itemDimension={90}
+              sections={[
+                  {
+                    id: 0,
+                    title: "Top Dawgs",
+                    data: dataTop.slice(0, 6),
+                    pageData: dataTop
+                  },
+                  {
+                    id: 1,
+                    title: "Newest Posts",
+                    data: dataNew.slice(0, 6),
+                    pageData: dataNew
+                  },
+                  {
+                    id: 2,
+                    title: "Bottom Dawgs",
+                    data: dataBottom.slice(0, 6),
+                    pageData: dataBottom
+                  },
+                ]}
 
 
-                style={styles.gridView}
-                // staticDimension={300}
-                // fixed
-                spacing={10}
-                renderItem={renderImageItem}
-                renderSectionHeader={({ section }) => (
-                    <Text style={styles.sectionHeader}>{section.title}</Text>
-                  )}
-                renderSectionFooter={({ section }) => (
-                  <TouchableOpacity onPress={() => navigate('FullList', { pageData: section.pageData, title: section.title })} >
-                    <View style={{textAlignVertical: 'center'}}>
-                      <Text style={styles.sectionFooter}>See more <FontAwesomeIcon icon={  faLongArrowAltRight } size={ 16 } />
-                      </Text>
-                    </View>
-                  </TouchableOpacity>
-                  )}
-            />
+              style={styles.gridView}
+              // staticDimension={300}
+              // fixed
+              spacing={10}
+              renderItem={renderImageItem}
+              renderSectionHeader={({ section }) => (
+                  <Text style={styles.sectionHeader}>{section.title}</Text>
+                )}
+              renderSectionFooter={({ section }) => (
+                <TouchableOpacity onPress={() => navigate('FullList', { pageData: section.pageData, title: section.title })} >
+                  <View style={{textAlignVertical: 'center'}}>
+                    <Text style={styles.sectionFooter}>See more <FontAwesomeIcon icon={  faLongArrowAltRight } size={ 16 } />
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+                )}
+          />
         );
     }
 }

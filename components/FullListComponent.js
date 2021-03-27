@@ -15,13 +15,15 @@ class FullList extends Component {
     render() {
         const { navigate } = this.props.navigation;
         const renderImageItem = ({item}) => {
+            const needsUri = item.image.toString().includes('png'); // Check for full file path vs imported image
             return (
                 <View style={styles.itemContainer}>
                     <TouchableOpacity onPress={() => navigate('DogDetail', { dog: item }  )} >
-                    <ImageBackground
-                        source={item.image}
-                        style={styles.itemImage}
-                    />
+                    {needsUri
+                      ? <ImageBackground source={{uri: item.image}} style={styles.itemImage}/>
+                      : <ImageBackground source={item.image} style={styles.itemImage}/>
+                    }
+
                      <View style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, justifyContent: 'flex-end'}}>
                         <Text style={styles.itemName}>
                           {item.name}
