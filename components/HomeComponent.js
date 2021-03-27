@@ -56,9 +56,10 @@ class Home extends Component {
             );
         };
 
-        const dataTop = [...this.props.dogs.dogs].sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
+        // Filter out dogs that are unrated from the top and bottom lists
+        const dataTop = [...this.props.dogs.dogs].sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating)).filter(dog => (dog.rating > 0));
         const dataNew = [...this.props.dogs.dogs].sort((a, b) => new Date(b.date) - new Date(a.date));
-        const dataBottom = [...this.props.dogs.dogs].sort((a, b) => parseFloat(a.rating) - parseFloat(b.rating));
+        const dataBottom = [...this.props.dogs.dogs].sort((a, b) => parseFloat(a.rating) - parseFloat(b.rating)).filter(dog => (dog.rating > 0));
 
         return (
           <SectionGrid
