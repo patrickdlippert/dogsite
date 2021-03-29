@@ -20,11 +20,15 @@ const mapDispatchToProps = {
     deleteFavorite: dogId => (deleteFavorite(dogId))
 };
 
+// The RenderDogDetail function assembles the card for the dog. Note that a clickable icon is
+// placed on top of the image to mark/unmark the dog as a favorite. The dog's data is received
+// as props, and two functions are also received as props to mark or remove a favorite.
+
 function RenderDogDetail(props) {
 
     const {dog, breeds, favorite} = props;
     if (dog) {
-        const needsUri = dog.image.toString().includes('png'); // Check for full file path vs imported image
+        const needsUri = dog.image.toString().includes('.png'); // Check for full file path vs imported image
         return (
             <Card>
 
@@ -47,8 +51,6 @@ function RenderDogDetail(props) {
                             />
                     </View>
                 </View>
-
-
 
                 <Text style={{margin: 10}}>
                     {dog.description}
@@ -79,6 +81,12 @@ function RenderDogDetail(props) {
     }
     return <View />;
 }
+
+
+// The DogDetail component creates a full screen view of a single dog's information.
+// A card is created within a scroll view, and it contains a larger image, dog breed,
+// dog description/caption and a rating value. The Rating component is using a custom
+// gold paw icon instead of the standard ones.
 
 class DogDetail extends Component {
 
@@ -118,19 +126,19 @@ class DogDetail extends Component {
 
 const styles = StyleSheet.create({
     itemContainer: {
-      justifyContent: 'flex-end',
-      borderRadius: 5,
-      padding: 0,
-      height: 300,
+        justifyContent: 'flex-end',
+        borderRadius: 5,
+        padding: 0,
+        height: 300,
     },
-   itemImage: {
-      alignSelf: 'center',
-      height: 300,
-      width: "100%",
-      overflow: 'hidden',
-      borderColor: '#636e72',
-      borderWidth: 1,
-      borderRadius: 5
+    itemImage: {
+        alignSelf: 'center',
+        height: 300,
+        width: "100%",
+        overflow: 'hidden',
+        borderColor: '#636e72',
+        borderWidth: 1,
+        borderRadius: 5
     },
     textItem: {
         color: 'tomato',
@@ -138,8 +146,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center'
     }
-
-
   });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DogDetail);

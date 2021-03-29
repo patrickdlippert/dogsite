@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, ImageBackground, StyleSheet, TouchableOpacity } from 'react-native';
+import { Button } from 'react-native-elements';
 import { FlatGrid } from 'react-native-super-grid';
 import { connect } from 'react-redux';
 import { deleteFavorite } from '../redux/ActionCreators';
@@ -19,20 +20,14 @@ const mapDispatchToProps = {
 };
 
 
-class Favorites extends Component {
-
-    static navigationOptions = {
-        title: 'My Favorites'
-    };
-
-   
+class Favorites extends Component {   
     render() {
         const { navigate } = this.props.navigation;
         pageData=this.props.dogs.dogs.filter(
             dog => this.props.favorites.includes(dog.id)
         );
         const renderImageItem = ({item}) => {
-            const needsUri = item.image.toString().includes('png'); // Check for full file path vs imported image
+            const needsUri = item.image.toString().includes('.png'); // Check for full file path vs imported image
             return (
                 <View style={styles.itemContainer}>
                     <TouchableOpacity onPress={() => navigate('DogDetail', { dog: item }  )} >

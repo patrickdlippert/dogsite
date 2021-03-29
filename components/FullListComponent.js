@@ -3,6 +3,11 @@ import { View, Text, ImageBackground, StyleSheet, TouchableOpacity } from 'react
 import { FlatGrid } from 'react-native-super-grid';
 import { SPONSORS } from '../shared/sponsors';
 
+// The FullList component generates a scrollable list of thumbnails for one set of data.
+// This is used when displaying a full list of: top dogs, newest posts or bottom dogs.
+// Each thumbnail is clickable and will navigate to the DogDetail view for a larger image,
+// dog breed, dog description/caption and rating.
+
 class FullList extends Component {
     constructor(props) {
         super(props);
@@ -15,7 +20,7 @@ class FullList extends Component {
     render() {
         const { navigate } = this.props.navigation;
         const renderImageItem = ({item}) => {
-            const needsUri = item.image.toString().includes('png'); // Check for full file path vs imported image
+            const needsUri = item.image.toString().includes('.png'); // Check for full file path vs imported image
             return (
                 <View style={styles.itemContainer}>
                     <TouchableOpacity onPress={() => navigate('DogDetail', { dog: item }  )} >

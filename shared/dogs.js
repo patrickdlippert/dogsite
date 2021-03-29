@@ -69,7 +69,36 @@ import image66 from '../assets/images/dogs/dog66.jpg';
 import image67 from '../assets/images/dogs/dog67.jpg';
 import image68 from '../assets/images/dogs/dog68.jpg';
 import image69 from '../assets/images/dogs/dog69.jpg';
-
+import image70 from '../assets/images/dogs/dog70.jpg';
+import image71 from '../assets/images/dogs/dog71.jpg';
+import image72 from '../assets/images/dogs/dog72.jpg';
+import image73 from '../assets/images/dogs/dog73.jpg';
+import image74 from '../assets/images/dogs/dog74.jpg';
+import image75 from '../assets/images/dogs/dog75.jpg';
+import image76 from '../assets/images/dogs/dog76.jpg';
+import image77 from '../assets/images/dogs/dog77.jpg';
+import image78 from '../assets/images/dogs/dog78.jpg';
+import image79 from '../assets/images/dogs/dog79.jpg';
+import image80 from '../assets/images/dogs/dog80.jpg';
+import image81 from '../assets/images/dogs/dog81.jpg';
+import image82 from '../assets/images/dogs/dog82.jpg';
+import image83 from '../assets/images/dogs/dog83.jpg';
+import image84 from '../assets/images/dogs/dog84.jpg';
+import image85 from '../assets/images/dogs/dog85.jpg';
+import image86 from '../assets/images/dogs/dog86.jpg';
+import image87 from '../assets/images/dogs/dog87.jpg';
+import image88 from '../assets/images/dogs/dog88.jpg';
+import image89 from '../assets/images/dogs/dog89.jpg';
+import image90 from '../assets/images/dogs/dog90.jpg';
+import image91 from '../assets/images/dogs/dog91.jpg';
+import image92 from '../assets/images/dogs/dog92.jpg';
+import image93 from '../assets/images/dogs/dog93.jpg';
+import image94 from '../assets/images/dogs/dog94.jpg';
+import image95 from '../assets/images/dogs/dog95.jpg';
+import image96 from '../assets/images/dogs/dog96.jpg';
+import image97 from '../assets/images/dogs/dog97.jpg';
+import image98 from '../assets/images/dogs/dog98.jpg';
+import image99 from '../assets/images/dogs/dog99.jpg';
 
 export const DOGS = [
     {
@@ -703,5 +732,275 @@ export const DOGS = [
     rating: 4.3,
     date: "2021-02-05T04:19Z",
     description: "Doberman puppies are so cute, especially before their ears can point."
+  },
+  {
+    id: 70,
+    name:"Dougie",
+    image: image70,
+    breed: 21,
+    rating: 2.1,
+    date: "2021-03-02T05:19Z",
+    description: "Dougie looks a little sloppy, but he's a kisser!"
+  },
+  {
+    id: 71,
+    name:"Sluggo",
+    image: image71,
+    breed: 5,
+    rating: 2.0,
+    date: "2021-02-06T04:19Z",
+    description: "Sluggo is a thick old guy. He likes to look at birds through the patio door all day."
+  },
+  {
+    id: 72,
+    name:"Chi-Chi",
+    image: image72,
+    breed: 8,
+    rating: 2.4,
+    date: "2021-02-05T04:19Z",
+    description: "He's the goofiest Chihuahua to ever walk the planet. He loves to dress up in silly costumes too!"
+  },
+  {
+    id: 73,
+    name:"Agatha",
+    image: image73,
+    breed: 9,
+    rating: 2.2,
+    date: "2021-01-06T08:19Z",
+    description: "She may not have all of her fur, but we think she's still the cutest dog!"
+  },
+  {
+    id: 74,
+    name:"Diana",
+    image: image74,
+    breed: 13,
+    rating: 4.1,
+    date: "2021-02-05T04:19Z",
+    description: "She's the people's princess. This English Springer Spaniel is our family's royalty."
+  },
+  {
+    id: 75,
+    name:"Edward",
+    image: image75,
+    breed: 13,
+    rating: 4.2,
+    date: "2021-03-26T04:19Z",
+    description: "Edward is king of the English Springer Spaniels! We live to serve him."
+  },
+  {
+    id: 76,
+    name:"Mabel",
+    image: image76,
+    breed: 13,
+    rating: 4.3,
+    date: "2020-08-05T04:20Z",
+    description: "She can sniff out trouble from a mile away. Springers are great protectors!"
+  },
+  {
+    id: 77,
+    name:"Floof",
+    image: image77,
+    breed: 19,
+    rating: 3.5,
+    date: "2020-12-05T04:19Z",
+    description: "We have to be careful taking Floof out in the show... we might lose her!"
+  },
+  {
+    id: 78,
+    name:"Andy",
+    image: image78,
+    breed: 19,
+    rating: 3.6,
+    date: "2021-01-11T04:19Z",
+    description: "Andy has more energy than any dog I've ever seen. He wants to explore or play with his toys from dusk to dawn."
+  },
+  {
+    id: 79,
+    name:"Gage",
+    image: image79,
+    breed: 19,
+    rating: 3.7,
+    date: "2021-02-12T03:19Z",
+    description: "Pomeranians are so fiesty... Gage loves to chase the cat, but they wind up snuggling together every night."
+  },
+  {
+    id: 80,
+    name:"Peppa",
+    image: image80,
+    breed: 19,
+    rating: 3.0,
+    date: "2021-03-16T03:19Z",
+    description: "Peppa is a salty little Pom-Pom. She loves to go hiking with us, but we have to watch her closely so that she doesn't jump in the lake."
+  },
+  {
+    id: 81,
+    name:"Chubbs",
+    image: image81,
+    breed: 9,
+    rating: 2.3,
+    date: "2020-05-12T03:19Z",
+    description: "Yep, he looks like a stuffed sausage, but he's all ours."
+  },
+  {
+    id: 82,
+    name:"Willow",
+    image: image82,
+    breed: 9,
+    rating: 4.0,
+    date: "2020-07-12T03:19Z",
+    description: "You don't know fun until you have a weiner dog like Willow!"
+  },
+  {
+    id: 83,
+    name:"Angelo",
+    image: image83,
+    breed: 9,
+    rating: 4.4,
+    date: "2020-05-12T03:19Z",
+    description: "Angelo is our little angel. Who could deny a face like that?"
+  },
+  {
+    id: 84,
+    name:"Poco",
+    image: image84,
+    breed: 9,
+    rating: 3.3,
+    date: "2020-11-12T08:22Z",
+    description: "He loves to bark at the squirrels and birds. He's a low-riding snugglebug!"
+  },
+  {
+    id: 85,
+    name:"Ali",
+    image: image85,
+    breed: 4,
+    rating: 3.6,
+    date: "2020-09-12T03:19Z",
+    description: "He floats like a butterfly and stings like a bee! Not really... he's a soft-hearted giant."
+  },
+  {
+    id: 86,
+    name:"Chyna",
+    image: image86,
+    breed: 4,
+    rating: 3.7,
+    date: "2020-10-09T09:19Z",
+    description: "They say that Boxers have sad faces, but she only makes us smile."
+  },
+  {
+    id: 87,
+    name:"Baxter",
+    image: image87,
+    breed: 4,
+    rating: 3.9,
+    date: "2021-03-19T03:19Z",
+    description: "Baxter looks so innocent here, but he can easily get into trouble as a curious Boxer puppy!"
+  },
+  {
+    id: 88,
+    name:"Anna",
+    image: image88,
+    breed: 4,
+    rating: 3.5,
+    date: "2021-01-22T03:19Z",
+    description: "Anna looks really serious in this pic, but she was just rolling around in a pile of leaves with our toddler a few minutes before."
+  },
+  {
+    id: 89,
+    name:"Abbey",
+    image: image89,
+    breed: 10,
+    rating: 4.1,
+    date: "2020-05-15T12:19Z",
+    description: "Here's Abbey at her peak puppy cuteness! Everyone should have a Dalmatian puppy, but be warned... they have endless energy!"
+  },
+  {
+    id: 90,
+    name:"Lucy",
+    image: image90,
+    breed: 10,
+    rating: 3.3,
+    date: "2020-11-12T03:19Z",
+    description: "She rules the roost at our house. Lucy had a litter of 4 puppies last spring."
+  },
+  {
+    id: 91,
+    name:"Leon",
+    image: image91,
+    breed: 10,
+    rating: 3.4,
+    date: "2020-12-02T03:19Z",
+    description: "Leon looks like he belongs in a fire station, but he's actually a great hunting dog. He's been on many duck expeditions with us."
+  },
+  {
+    id: 92,
+    name:"Dewey",
+    image: image92,
+    breed: 10,
+    rating: 3.5,
+    date: "2021-01-12T03:19Z",
+    description: "Dewey wants to be everyone's friend. Unfortunately, he'll try to get on your lap if you take a seat. He doesn't know his own size!"
+  },
+  {
+    id: 93,
+    name:"Harold",
+    image: image93,
+    breed: 10,
+    rating: 4.1,
+    date: "2020-08-12T03:19Z",
+    description: "Harold has been a perfect Dalmatian puppy. Just don't forget to play with him every day or he'll find other outlets for his energy."
+  },
+  {
+    id: 94,
+    name:"Jack",
+    image: image94,
+    breed: 17,
+    rating: 3.9,
+    date: "2021-03-01T03:19Z",
+    description: "His name is a little obvious for a Jack Russell, but he really looks like a Jack!"
+  },
+  {
+    id: 95,
+    name:"Marty",
+    image: image95,
+    breed: 17,
+    rating: 3.8,
+    date: "2021-01-01T08:19Z",
+    description: "Marty is so playful. He's also an escape artist that seems to climb under or over any barrier that we put in his way."
+  },
+  {
+    id: 96,
+    name:"Lulu",
+    image: image96,
+    breed: 17,
+    rating: 3.7,
+    date: "2021-02-01T11:19Z",
+    description: "Lulu was having a blast at the dog park!"
+  },
+  {
+    id: 97,
+    name:"Winter",
+    image: image97,
+    breed: 20,
+    rating: 4.0,
+    date: "2020-05-01T07:19Z",
+    description: "Winter is the most beautiful Standard Poodle. Her grooming is detailed and lengthy, but she's a champion."
+  },
+  {
+    id: 98,
+    name:"Bowie",
+    image: image98,
+    breed: 20,
+    rating: 3.8,
+    date: "2020-09-01T08:19Z",
+    description: "Bowie has an other-worldy look about him, but he's a super-loving big Poodle. He's great with the kids, and he lets them climb all over him."
+  },
+  {
+    id: 99,
+    name:"Ruby",
+    image: image99,
+    breed: 20,
+    rating: 4.2,
+    date: "2021-02-25T07:19Z",
+    description: "She's our little red Toy Poodle. She likes to sun herself on the patio whenever we let her outside."
   }
 ];

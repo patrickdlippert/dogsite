@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, LogBox} from 'react-native';
+import { View, Image, Text, StyleSheet, LogBox} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
@@ -91,7 +91,7 @@ function TabNavScreen() {
           activeTintColor: 'tomato',
           inactiveTintColor: 'gray',
           labelStyle: {
-            fontSize: 14,
+            fontSize: 16,
             fontWeight: "bold"
           },
           }}>
@@ -118,43 +118,68 @@ class Main extends Component {
           <RootStack.Navigator mode="modal" 
            screenOptions={({route, navigation}) => ({
             headerStyle: { backgroundColor: '#d5fafa'},
-            headerTitle: props => <LogoTitle {...props} />,
-              headerRight: () => (
-
+            headerTitle: '',
+            headerLeft: props => <LogoTitle {...props} />,
+            headerRight: () => (
+              <View style={{ marginRight: 10}}>
                 <Icon
-                name='heart'
-                type='font-awesome'
-                color='tomato'
-                size={12}
-                raised
-                reverse
-                onPress={() => navigation.navigate('MyModal')}
+                  name='heart'
+                  type='font-awesome'
+                  color='tomato'
+                  size={28}
+                  onPress={() => navigation.navigate('MyModal')}
                 />
-
-              )
+              </View>
+            )
             })}
           >
 
 
             <RootStack.Screen name="Tab" component={TabNavScreen}  />
-            <RootStack.Screen name="MyModal" component={Favorites} 
-              options={{ headerStyle: { backgroundColor: '#d5fafa'}, headerTitle: "My Favorites", headerRight:'' }}/>
+            <RootStack.Screen name="MyModal" component={Favorites}
+              options={({route, navigation}) => ({
+                 headerStyle: { backgroundColor: '#d5fafa'},
+                 headerTitle: "My Favorites", 
+                 headerTitleAlign: 'center',
+                 headerLeft: () => ( <Text style={styles.textLink} onPress={ () => { navigation.navigate('Tab')}}>Done</Text>),
+                 headerRight:''
+                })
+              }    
+            />
 
             <RootStack.Screen
               name="DogDetail" 
               component={DogDetail}
-              options={({ route }) => ({ title: route.params.dog.name })}
+              options={({ route, navigation }) => ({ 
+                headerTitle: route.params.dog.name, 
+                headerTitleAlign: 'center',
+                headerLeft: () => ( <Text style={styles.textLink} onPress={ () => { navigation.goBack()}}>Back</Text>),
+                headerRight:''
+              
+              })
+            }  
             />  
-            <RootStack.Screen
-              name="FullList" 
-              component={FullList}
-              options={({ route }) => ({ title: route.params.title })}
-            /> 
+
           </RootStack.Navigator>
         </NavigationContainer>
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  title: {
+      marginTop: 10,
+      fontSize: 22,
+      fontWeight: 'bold'
+  },
+  textLink: {
+    color: '#5637DD',
+    fontWeight: '700',
+    fontSize: 18,
+    padding: 2,
+    margin: 10    
+  }
+});
 
 export default Main;

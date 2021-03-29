@@ -32,11 +32,15 @@ class Home extends Component {
     };
 
 
+    // The renderImageItem function creates the image component for each dog thumbnail in each of
+    // the three sections (top, new, bottom dogs). The dog's name is overlaid on the image using
+    // white text with a black drop shadow for clarity. Each image is clickable and navigates to the
+    // DogDetail view for a larger image with breed name, description and rating.
 
     render() {
         const { navigate } = this.props.navigation;
         const renderImageItem = ({item}) => {
-          const needsUri = item.image.toString().includes('png'); // Check for full file path vs imported image
+          const needsUri = item.image.toString().includes('.png'); // Check for full file path vs imported image
 
             return (
                 <View style={styles.itemContainer}>
@@ -61,6 +65,10 @@ class Home extends Component {
         const dataNew = [...this.props.dogs.dogs].sort((a, b) => new Date(b.date) - new Date(a.date));
         const dataBottom = [...this.props.dogs.dogs].sort((a, b) => parseFloat(a.rating) - parseFloat(b.rating)).filter(dog => (dog.rating > 0));
 
+        // The SectionGrid component creates a scrollable area with three subsections on the page. 
+        // Functions are provided to create the header (simple Text) and footer (links to a full page view
+        // of that section's items)
+        
         return (
           <SectionGrid
               itemDimension={90}
