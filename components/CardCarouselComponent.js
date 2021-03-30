@@ -1,12 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View, Linking, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Linking, TouchableOpacity, ImageBackground } from 'react-native';
 import { Card } from 'react-native-elements';
 import Slick from 'react-native-slick';
 import { LinearGradient } from 'expo-linear-gradient';
  
 const styles = StyleSheet.create({
   wrapper: {
-    height: 275
+    height: 120,
 },
   slide: {
     flex: 1,
@@ -17,7 +17,14 @@ const styles = StyleSheet.create({
     textAlign: 'center', 
     fontSize: 15,
     fontWeight: 'bold',
-  }
+  },
+  imageBox: {
+    alignSelf: 'center',
+    height: 82,
+    width: 300,
+    margin: 5
+
+}
 });
 
 
@@ -47,17 +54,20 @@ function RenderCards({resources}) {
         return (
             <View key={resource.id} style={styles.slide}>
                 <LinearGradient
-                    colors={['#60106B', '#3046C5', '#5637DD']}
+                    colors={['#60106B', '#3046C5', '#d5fafa']}
                     style={styles.linearGradient}
                 >
-                <ConstructCard resource={resource} />
+                <TouchableOpacity key={resource.id} onPress={ ()=>{ Linking.openURL(`${resource.url}`)}}>
+                    <ImageBackground source={resource.image} style={styles.imageBox} />
+                </TouchableOpacity>
+
                 </LinearGradient>
             </View>
         );
     });
 
     return (
-      <Slick style={styles.wrapper} showsButtons={false} autoplay={true}>
+      <Slick style={styles.wrapper} showsButtons={false} autoplay={true} showsPagination={false}>
           {cardslide}
       </Slick>
     );

@@ -4,14 +4,15 @@ import { Card, Rating, Icon } from 'react-native-elements';
 import { SPONSORS } from '../shared/sponsors';
 import { connect } from 'react-redux';
 import { postFavorite,  deleteFavorite } from '../redux/ActionCreators';
-//import CardCarousel from './CardCarouselComponent';
+import CardCarousel from './CardCarouselComponent';
 
 const PAW_IMAGE = require('../assets/images/pawr.png');
 
 const mapStateToProps = state => {
     return {
         breeds: state.breeds,
-        favorites: state.favorites
+        favorites: state.favorites,
+        resources: state.sponsors
     };
   };
 
@@ -118,6 +119,9 @@ class DogDetail extends Component {
                     markFavorite={() => this.markFavorite(dog.id)}
                     removeFavorite={() => this.removeFavorite(dog.id)}
                 />
+                 <View style={styles.adContainer}>
+                    <CardCarousel resources={this.state.sponsors} />
+                </View>
         </ScrollView>
         );
     }
@@ -145,6 +149,10 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         textAlign: 'center'
+    },
+    adContainer: {
+        flex: 1,
+        justifyContent: 'flex-end'
     }
   });
 

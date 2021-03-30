@@ -36,7 +36,9 @@ function HomeStackScreen() {
    <HomeStack.Navigator
       initialRouteName="Home"
    >
-      <HomeStack.Screen name="Home" component={Home} /> 
+      <HomeStack.Screen name="Home" component={Home} 
+        options={{ headerShown: false }}
+      /> 
       <HomeStack.Screen
         name="DogDetail" 
         component={DogDetail}
@@ -58,7 +60,9 @@ const ProfileStack = createStackNavigator();
 function ProfileStackScreen() {
   return (
     <ProfileStack.Navigator>
-      <ProfileStack.Screen name="Profile" component={ProfileEditor} />
+      <ProfileStack.Screen name="Profile" component={ProfileEditor}
+        options={{ headerShown: false }}
+      />
     </ProfileStack.Navigator>
   );
 }
