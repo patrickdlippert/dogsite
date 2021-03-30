@@ -19,7 +19,7 @@ function LogoTitle() {
   return (
       <View style={{alignItems: 'center', backgroundColor: '#D5FAFA'}}>
       <Image
-          style={{ width: 250, height: 50 }}
+          style={{ width: 180, height: 45 }}
           source={require('../assets/images/dawgr-logo.png')}
           resizeMode='contain'
       />
