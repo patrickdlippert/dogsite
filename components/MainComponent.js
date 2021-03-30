@@ -3,7 +3,6 @@ import { View, Image, Text, StyleSheet, LogBox} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { Ionicons } from '@expo/vector-icons';
 import { Icon } from 'react-native-elements';
 import Home from './HomeComponent';
 import DogDetail from './DogDetailComponent';
@@ -75,22 +74,6 @@ const Tab = createMaterialTopTabNavigator();
 function TabNavScreen() {
   return (
     <Tab.Navigator
-      screenOptions={({ route }) => ({
-          tabBarIcon: ({ focused, color, size }) => {
-        let iconName;
-        if (route.name === 'Home') {
-            iconName = focused
-            ? 'ios-information-circle'
-            : 'ios-information-circle-outline';
-          } else if (route.name === 'Profile') {
-            iconName = focused
-            ? 'ios-list-box'
-            : 'ios-list';
-          }
-      return <Ionicons name={iconName} size={size} color={color} />;
-      },
-        })}
-  
       tabBarOptions={{
           activeTintColor: 'tomato',
           inactiveTintColor: 'gray',
