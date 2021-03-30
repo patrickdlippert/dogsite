@@ -4,7 +4,7 @@ import { Button } from 'react-native-elements';
 import { FlatGrid } from 'react-native-super-grid';
 import { connect } from 'react-redux';
 import { deleteFavorite } from '../redux/ActionCreators';
-import CardCarousel from './CardCarouselComponent';
+import AdCarousel from './AdCarouselComponent';
 
 
 const mapStateToProps = state => {

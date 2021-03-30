@@ -1,14 +1,14 @@
-import image0 from '../assets/images/sponsors/chewy.png';
-import image1 from '../assets/images/sponsors/petsmart.png';
-import image2 from '../assets/images/sponsors/bravecto.png';
-
+import imageS0 from '../assets/images/sponsors/chewy.png';
+import imageS1 from '../assets/images/sponsors/petsmart.png';
+import imageS2 from '../assets/images/sponsors/bravecto.png';
+import imageS3 from '../assets/images/sponsors/bluebuffalo.png';
 
 export const SPONSORS = [
     {
         id: 0,
         name: "Chewy.com",
         displayName: false,
-        image: image0,
+        image: imageS0,
         featured: false,
         description: "Pet products online",
         url: 'https://www.chewy.com/'
@@ -17,7 +17,7 @@ export const SPONSORS = [
         id: 1,
         name: 'Petsmart',
         displayName: false,
-        image: image1,
+        image: imageS1,
         featured: false,
         description: "Pet Superstores",
         url: 'https://www.petsmart.com/'
@@ -26,10 +26,19 @@ export const SPONSORS = [
         id: 2,
         name: 'Bravecto',
         displayName: false,
-        image: image2,
+        image: imageS2,
         featured: true,
         description: "Flea and tick prevention",
         url: 'https://us.bravecto.com/'
+    },
+    {
+        id: 3,
+        name: 'Blue Buffalo',
+        displayName: false,
+        image: imageS3,
+        featured: true,
+        description: "Pet Food",
+        url: 'https://bluebuffalo.com/'
     }
 ]
       

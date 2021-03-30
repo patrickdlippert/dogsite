@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FlatList, View, Text, StyleSheet, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import { deleteFavorite } from '../redux/ActionCreators';
-import CardCarousel from './CardCarouselComponent';
+import AdCarousel from './AdCarouselComponent';
 
 
 const mapStateToProps = state => {

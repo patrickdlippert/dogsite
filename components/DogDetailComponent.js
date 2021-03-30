@@ -4,7 +4,7 @@ import { Card, Rating, Icon } from 'react-native-elements';
 import { SPONSORS } from '../shared/sponsors';
 import { connect } from 'react-redux';
 import { postFavorite,  deleteFavorite } from '../redux/ActionCreators';
-import CardCarousel from './CardCarouselComponent';
+import AdCarousel from './AdCarouselComponent';
 
 const PAW_IMAGE = require('../assets/images/pawr.png');
 
@@ -32,7 +32,6 @@ function RenderDogDetail(props) {
         const needsUri = dog.image.toString().includes('.png'); // Check for full file path vs imported image
         return (
             <Card>
-
                 <View style={styles.itemContainer}>
                 {needsUri
                       ? <ImageBackground source={{uri: dog.image}} style={styles.itemImage}/>
@@ -111,18 +110,22 @@ class DogDetail extends Component {
         const breeds = this.props.breeds.breeds;
         
         return (
-            <ScrollView>
-                <RenderDogDetail 
-                    dog={dog} 
-                    breeds={breeds} 
-                    favorite={this.props.favorites.includes(dog.id)}
-                    markFavorite={() => this.markFavorite(dog.id)}
-                    removeFavorite={() => this.removeFavorite(dog.id)}
-                />
-                 <View style={styles.adContainer}>
-                    <CardCarousel resources={this.state.sponsors} />
+            <View style={styles.adContainer}>
+                <View style={{flex: .85}}>
+                <ScrollView>
+                    <RenderDogDetail 
+                        dog={dog} 
+                        breeds={breeds} 
+                        favorite={this.props.favorites.includes(dog.id)}
+                        markFavorite={() => this.markFavorite(dog.id)}
+                        removeFavorite={() => this.removeFavorite(dog.id)}
+                    />
+                </ScrollView>
                 </View>
-        </ScrollView>
+                <View  style={{flex: .15, position: 'absolute', left: 0, right: 0, bottom: 0}}>
+                    <AdCarousel resources={this.state.sponsors} />
+                </View>
+            </View>
         );
     }
 }
@@ -130,10 +133,9 @@ class DogDetail extends Component {
 
 const styles = StyleSheet.create({
     itemContainer: {
-        justifyContent: 'flex-end',
         borderRadius: 5,
         padding: 0,
-        height: 300,
+        height: 300
     },
     itemImage: {
         alignSelf: 'center',
@@ -152,7 +154,7 @@ const styles = StyleSheet.create({
     },
     adContainer: {
         flex: 1,
-        justifyContent: 'flex-end'
+
     }
   });
 
