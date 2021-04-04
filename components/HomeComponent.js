@@ -44,7 +44,7 @@ class Home extends Component {
 
             return (
                 <View style={styles.itemContainer}>
-                    <TouchableOpacity onPress={() => navigate('DogDetail', { dog: item } )} >
+                    <TouchableOpacity onPress={() => navigate('DogDetail', { dogId: item.id, dogName: item.name} )} >
 
                     {needsUri
                       ? <ImageBackground source={{uri: item.image}} style={styles.itemImage}/>

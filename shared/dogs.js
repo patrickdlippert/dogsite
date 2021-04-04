@@ -107,6 +107,7 @@ export const DOGS = [
         image: image0,
         breed: 15,
         rating: 4.7,
+        numRatings: 20, 
         date: "2019-02-18T18:12Z",
         description: "My loveable pooch. What a sweetheart!"
     },
@@ -116,6 +117,7 @@ export const DOGS = [
         image: image1,
         breed: 27,
         rating: 3.3,
+        numRatings: 20, 
         date: "2019-02-18T18:12Z",
         description: "My loveable pooch. What a sweetheart!"
     },
@@ -125,6 +127,7 @@ export const DOGS = [
         image: image2,
         breed: 11,
         rating: 4.4,
+        numRatings: 20, 
         date: "2019-02-18T18:12Z",
         description: "My loveable pooch. What a sweetheart!"
     },
@@ -134,6 +137,7 @@ export const DOGS = [
         image: image3,
         breed: 2, 
         rating: 4.4,
+        numRatings: 20, 
         date: "2019-02-18T18:12Z",
         description: "My loveable pooch. What a sweetheart!"
     },
@@ -143,6 +147,7 @@ export const DOGS = [
         image: image4,
         breed: 21,
         rating: 4.3,
+        numRatings: 20, 
         date: "2019-02-18T18:12Z",
         description: "My loveable pooch. What a sweetheart!"
         
@@ -153,6 +158,7 @@ export const DOGS = [
         image: image5,
         breed: 17,
         rating: 4.2,
+        numRatings: 20, 
         date: "2019-02-18T18:12Z",
         description: "My loveable pooch. What a sweetheart!"
     },
@@ -162,6 +168,7 @@ export const DOGS = [
         image: image6,
         breed: 7, 
         rating: 4.1,
+        numRatings: 20,
         date: "2019-02-23T18:12Z",
         description: "My loveable pooch. What a sweetheart!"      
     },
@@ -171,6 +178,7 @@ export const DOGS = [
         image: image7,
         breed: 12,
         rating: 4.0,
+        numRatings: 20, 
         date: "2019-02-24T18:12Z",
         description: "My loveable pooch. What a sweetheart!"
     },
@@ -180,6 +188,7 @@ export const DOGS = [
         image: image8,
         breed: 18,
         rating: 3.8,
+        numRatings: 20, 
         date: "2019-02-25T18:12Z",
         description: "My loveable pooch. What a sweetheart!"
     },
@@ -189,6 +198,7 @@ export const DOGS = [
         image: image9,
         breed: 21,
         rating: 3.7,
+        numRatings: 20, 
         date: "2019-02-26T18:12Z",
         description: "My loveable pooch. What a sweetheart!"
     },
@@ -198,6 +208,7 @@ export const DOGS = [
       image: image10,
       breed: 19,
       rating: 3.7,
+      numRatings: 20, 
       date: "2019-02-18T18:12Z",
       description: "My loveable pooch. What a sweetheart!"
     },
@@ -207,6 +218,7 @@ export const DOGS = [
       image: image11,
       breed: 21,
       rating: 3.7,
+      numRatings: 20, 
       date: "2020-06-18T18:12Z",
       description: "My loveable pooch. What a sweetheart!"
     },
@@ -216,6 +228,7 @@ export const DOGS = [
       image: image12,
       breed: 19,
       rating: 3.7,
+      numRatings: 20, 
       date: "2020-01-18T18:12Z",
       description: "My loveable pooch. What a sweetheart!"
     },
@@ -225,6 +238,7 @@ export const DOGS = [
       image: image13,
       breed: 8,
       rating: 3.7,
+      numRatings: 20, 
       date: "2021-02-18T19:12Z",
       description: "Bear is my loveable pooch. What a sweetheart!"
   },
@@ -234,6 +248,7 @@ export const DOGS = [
     image: image14,
     breed: 30,
     rating: 3.7,
+    numRatings: 20, 
     date: "2021-02-24T18:12Z",
     description: "My loveable pooch. What a sweetheart!"
   },
@@ -243,6 +258,7 @@ export const DOGS = [
     image: image15,
     breed: 15,
     rating: 3.7,
+    numRatings: 20, 
     date: "2021-02-18T18:12Z",
     description: "My loveable pooch. What a sweetheart!"
   },
@@ -252,6 +268,7 @@ export const DOGS = [
     image: image16,
     breed: 1,
     rating: 3.7,
+    numRatings: 20, 
     date: "2019-04-18T18:12Z",
     description: "My loveable pooch. What a sweetheart!"
   },
@@ -261,6 +278,7 @@ export const DOGS = [
     image: image17,
     breed: 1,
     rating: 3.7,
+    numRatings: 20, 
     date: "2019-05-18T18:12Z",
     description: "My loveable pooch. What a sweetheart!"
   },
@@ -270,6 +288,7 @@ export const DOGS = [
     image: image18,
     breed: 21, 
     rating: 3.7,
+    numRatings: 20, 
     date: "2019-06-18T18:12Z",
     description: "My loveable pooch. What a sweetheart!"
   },
@@ -279,6 +298,7 @@ export const DOGS = [
     image: image19,
     breed: 18,
     rating: 3.7,
+    numRatings: 20, 
     date: "2019-07-18T18:12Z",
     description: "My loveable pooch. What a sweetheart!"
   },
@@ -288,6 +308,7 @@ export const DOGS = [
     image: image20,
     breed: 30,
     rating: 1.0,
+    numRatings: 20, 
     date: "2019-08-18T18:12Z",
     description: "If you think you've had a bad day, try walking in my paws!"
   },
@@ -297,6 +318,7 @@ export const DOGS = [
     image: image21,
     breed: 8,
     rating: 1.2,
+    numRatings: 3, 
     date: "2019-09-18T18:12Z",
     description: "He's always having a bad hair day!"
   },
@@ -306,6 +328,7 @@ export const DOGS = [
     image: image22,
     breed: 30,
     rating: 1.3,
+    numRatings: 20, 
     date: "2019-10-18T18:12Z",
     description: "He's always having a bad hair day!"
   },
@@ -316,6 +339,7 @@ export const DOGS = [
     image: image23,
     breed: 5,
     rating: 1.3,
+    numRatings: 20, 
     date: "2019-11-18T18:12Z",
     description: "He's always having a bad hair day!"
   },
@@ -325,6 +349,7 @@ export const DOGS = [
     image: image24,
     breed: 30,
     rating: 1.0,
+    numRatings: 20, 
     date: "2021-03-07T18:12Z",
     description: "He's always having a bad hair day!"
   },
@@ -334,6 +359,7 @@ export const DOGS = [
     image: image25,
     breed: 8, 
     rating: 1.2,
+    numRatings: 20, 
     date: "2020-12-13T18:12Z",
     description: "He's always having a bad hair day!"
   },
@@ -343,6 +369,7 @@ export const DOGS = [
     image: image26,
     breed: 23,
     rating: 4.3,
+    numRatings: 20, 
     date: "2020-07-18T18:12Z",
     description: "My loveable pooch. What a sweetheart!"
   },
@@ -352,6 +379,7 @@ export const DOGS = [
     image: image27,
     breed: 21,
     rating: 3.9,
+    numRatings: 20, 
     date: "2020-05-18T18:12Z",
     description: "My loveable pooch. What a sweetheart!"
   },
@@ -361,6 +389,7 @@ export const DOGS = [
     image: image28,
     breed: 30,
     rating: 3.8,
+    numRatings: 20, 
     date: "2020-06-18T18:12Z",
     description: "My loveable pooch. What a sweetheart!"
   },
@@ -370,6 +399,7 @@ export const DOGS = [
     image: image29,
     breed: 14,
     rating: 3.4,
+    numRatings: 20, 
     date: "2020-07-19T18:12Z",
     description: "My loveable pooch. What a sweetheart!"
   },
@@ -379,6 +409,7 @@ export const DOGS = [
     image: image30,
     breed: 30, 
     rating: 3.3,
+    numRatings: 20, 
     date: "2020-08-11T18:12Z",
     description: "He's always having a bad hair day!"
   },
@@ -388,6 +419,7 @@ export const DOGS = [
     image: image31,
     breed: 21, 
     rating: 3.6,
+    numRatings: 20, 
     date: "2021-01-14T18:12Z",
     description: "How about a big sloppy kiss?"
   },
@@ -397,6 +429,7 @@ export const DOGS = [
     image: image32,
     breed: 30,
     rating: 3.4,
+    numRatings: 20, 
     date: "2021-01-10T18:12Z",
     description: "He's always having a bad hair day!"
   },
@@ -406,6 +439,7 @@ export const DOGS = [
     image: image33,
     breed: 30,
     rating: 1.2,
+    numRatings: 20, 
     date: "2019-12-11T18:12Z",
     description: "He has quite the smile!"
   },
@@ -415,6 +449,7 @@ export const DOGS = [
     image: image34,
     breed: 17,
     rating: 4.0,
+    numRatings: 20, 
     date: "2021-01-07T18:12Z",
     description: "He's always having a bad hair day!"
   },
@@ -424,6 +459,7 @@ export const DOGS = [
     image: image35,
     breed: 30,
     rating: 3.7,
+    numRatings: 20, 
     date: "2020-12-13T18:12Z",
     description: "He's always having a bad hair day!"
   },
@@ -433,6 +469,7 @@ export const DOGS = [
     image: image36,
     breed: 20,
     rating: 5.0,
+    numRatings: 20, 
     date: "2020-11-23T18:12Z",
     description: "The sweetest and cutest miniature Poodle on Earth!"
   },
@@ -442,6 +479,7 @@ export const DOGS = [
     image: image37,
     breed: 28,
     rating: 3.5,
+    numRatings: 20, 
     date: "2020-05-01T18:12Z",
     description: "My loveable pooch. What a sweetheart!"
   },
@@ -451,6 +489,7 @@ export const DOGS = [
     image: image38,
     breed: 28,
     rating: 4.8,
+    numRatings: 10, 
     date: "2020-02-18T08:12Z",
     description: "Westie puppies are simply the cutest things ever!"
   },
@@ -460,6 +499,7 @@ export const DOGS = [
     image: image39,
     breed: 25,
     rating: 4.3,
+    numRatings: 20, 
     date: "2020-08-09T18:12Z",
     description: "My loveable pooch. What a sweetheart!"
   },
@@ -469,6 +509,7 @@ export const DOGS = [
     image: image40,
     breed: 25,
     rating: 4.1,
+    numRatings: 20, 
     date: "2021-03-10T19:12Z",
     description: "Representing the Highlands, Pepper is a great Scottie."
   },
@@ -478,6 +519,7 @@ export const DOGS = [
     image: image41,
     breed: 6,
     rating: 3.6,
+    numRatings: 20, 
     date: "2021-01-14T18:12Z",
     description: "He's a proud Cairn Terrier!"
   },
@@ -487,6 +529,7 @@ export const DOGS = [
     image: image42,
     breed: 6,
     rating: 3.9,
+    numRatings: 20, 
     date: "2021-01-10T18:12Z",
     description: "He may not be in Oz, but he's perfect here at home."
   },
@@ -496,6 +539,7 @@ export const DOGS = [
     image: image43,
     breed: 29,
     rating: 4.2,
+    numRatings: 20,
     date: "2019-12-11T18:19Z",
     description: "She's the Yorkie with the cutest disposition."
   },
@@ -505,6 +549,7 @@ export const DOGS = [
     image: image44,
     breed: 29,
     rating: 4.0,
+    numRatings: 20, 
     date: "2021-01-07T18:10Z",
     description: "You can't deny that this Yorkie pup is the best."
   },
@@ -514,6 +559,7 @@ export const DOGS = [
     image: image45,
     breed: 29,
     rating: 3.7,
+    numRatings: 20, 
     date: "2019-04-13T08:12Z",
     description: "He's cute as a bug!"
   },
@@ -523,6 +569,7 @@ export const DOGS = [
     image: image46,
     breed: 14,
     rating: 3.9,
+    numRatings: 20, 
     date: "2020-11-23T18:12Z",
     description: "This German Shepherd is the most loyal companion dog we've ever had."
   },
@@ -532,6 +579,7 @@ export const DOGS = [
     image: image47,
     breed: 14,
     rating: 3.8,
+    numRatings: 20, 
     date: "2020-05-01T18:12Z",
     description: "She's a big dog, but as gentle as can be."
   },
@@ -541,6 +589,7 @@ export const DOGS = [
     image: image48,
     breed: 15,
     rating: 4.4,
+    numRatings: 20, 
     date: "2020-07-09T08:12Z",
     description: "Golden Retrievers are smart dogs."
   },
@@ -550,6 +599,7 @@ export const DOGS = [
     image: image49,
     breed: 15,
     rating: 4.3,
+    numRatings: 8, 
     date: "2020-07-10T18:12Z",
     description: "My loveable pooch. What a sweetheart!"
   },
@@ -559,6 +609,7 @@ export const DOGS = [
     image: image50,
     breed: 16,
     rating: 4.4,
+    numRatings: 20, 
     date: "2020-11-10T18:12Z",
     description: "Red is the best, goofy little Irish Setter ever!"
   },
@@ -568,6 +619,7 @@ export const DOGS = [
     image: image51,
     breed: 16,
     rating: 4.6,
+    numRatings: 12, 
     date: "2020-03-10T16:12Z",
     description: "Here's Darby at age 1 week. So precious!"
   },
@@ -577,6 +629,7 @@ export const DOGS = [
     image: image52,
     breed: 16,
     rating: 3.8,
+    numRatings: 20, 
     date: "2019-12-10T19:11Z",
     description: "She's the most loving big Irish that we've ever had."
   },
@@ -586,6 +639,7 @@ export const DOGS = [
     image: image53,
     breed: 16,
     rating: 4.1,
+    numRatings: 20, 
     date: "2020-07-10T08:19Z",
     description: "Andy getting ready for his first car ride ever. He had a great time after being nervous at first."
   },
@@ -595,6 +649,7 @@ export const DOGS = [
     image: image54,
     breed: 26,
     rating: 4.0,
+    numRatings: 20, 
     date: "2021-03-21T09:19Z",
     description: "Max is a sturdy Staffy, but he has a heart of gold."
   },
@@ -604,6 +659,7 @@ export const DOGS = [
     image: image55,
     breed: 26,
     rating: 3.7,
+    numRatings: 20, 
     date: "2021-02-21T09:19Z",
     description: "Colby loves to go on hikes to the lake."
   },
@@ -613,6 +669,7 @@ export const DOGS = [
     image: image56,
     breed: 26,
     rating: 4.1,
+    numRatings: 20, 
     date: "2020-05-21T09:19Z",
     description: "Don't let them tell you that Bull Terriers are dangerous. Winston is a real softie and he loves kids."
   },
@@ -622,6 +679,7 @@ export const DOGS = [
     image: image57,
     breed: 26,
     rating: 4.2,
+    numRatings: 20, 
     date: "2021-03-21T09:19Z",
     description: "Midnight is all muscle, but he thinks he's a lap dog."
   },
@@ -631,6 +689,7 @@ export const DOGS = [
     image: image58,
     breed: 24,
     rating: 4.2,
+    numRatings: 20, 
     date: "2021-03-21T09:19Z",
     description: "Charlie is all terrier... he loves to dig up the yard looking for critters!"
   },
@@ -640,6 +699,7 @@ export const DOGS = [
     image: image59,
     breed: 24,
     rating: 4.5,
+    numRatings: 6, 
     date: "2021-03-24T09:19Z",
     description: "Luna is soft and gray and she loves to cuddle."
   },
@@ -649,6 +709,7 @@ export const DOGS = [
     image: image60,
     breed: 24,
     rating: 4.2,
+    numRatings: 20, 
     date: "2020-02-21T09:19Z",
     description: "Whatever Bentley wants, he gets. Who could deny this face?"
   },
@@ -658,6 +719,7 @@ export const DOGS = [
     image: image61,
     breed: 24,
     rating: 4.2,
+    numRatings: 20, 
     date: "2020-07-21T09:19Z",
     description: "Here's Toby, grommed to perfection."
   },
@@ -667,6 +729,7 @@ export const DOGS = [
     image: image62,
     breed: 24,
     rating: 4.2,
+    numRatings: 20, 
     date: "2021-03-21T09:19Z",
     description: "A fun day out at the park. Milo deserved a treat for being so good."
   },
@@ -676,6 +739,7 @@ export const DOGS = [
     image: image63,
     breed: 27,
     rating: 4.5,
+    numRatings: 20, 
     date: "2021-01-05T09:19Z",
     description: "Shorty is one playful Corgi pup."
   },
@@ -685,6 +749,7 @@ export const DOGS = [
     image: image64,
     breed: 27,
     rating: 4.2,
+    numRatings: 20, 
     date: "2021-01-11T06:19Z",
     description: "Elf is a magical pup. He can get lost if we don't cut the grass!"
   },
@@ -694,6 +759,7 @@ export const DOGS = [
     image: image65,
     breed: 27,
     rating: 4.1,
+    numRatings: 20, 
     date: "2021-02-05T11:19Z",
     description: "Gordon is a purebred Corgi, and he does like to be treated like royalty."
   },
@@ -703,6 +769,7 @@ export const DOGS = [
     image: image66,
     breed: 27,
     rating: 3.7,
+    numRatings: 20, 
     date: "2021-01-05T09:19Z",
     description: "Bea has really distinctive markings that you don't see on every Corgi."
   },
@@ -712,6 +779,7 @@ export const DOGS = [
     image: image67,
     breed: 11,
     rating: 3.6,
+    numRatings: 20, 
     date: "2021-03-24T09:19Z",
     description: "Zeus definitly has the attributes of a Greek god, but don't let it get to his head!"
   },
@@ -721,6 +789,7 @@ export const DOGS = [
     image: image68,
     breed: 11,
     rating: 3.4,
+    numRatings: 20, 
     date: "2021-01-05T09:19Z",
     description: "Athena practicing her show stance. She's always on alert and has great instincts."
   },
@@ -730,6 +799,7 @@ export const DOGS = [
     image: image69,
     breed: 11,
     rating: 4.3,
+    numRatings: 20, 
     date: "2021-02-05T04:19Z",
     description: "Doberman puppies are so cute, especially before their ears can point."
   },
@@ -739,6 +809,7 @@ export const DOGS = [
     image: image70,
     breed: 21,
     rating: 2.1,
+    numRatings: 20, 
     date: "2021-03-02T05:19Z",
     description: "Dougie looks a little sloppy, but he's a kisser!"
   },
@@ -748,6 +819,7 @@ export const DOGS = [
     image: image71,
     breed: 5,
     rating: 2.0,
+    numRatings: 20, 
     date: "2021-02-06T04:19Z",
     description: "Sluggo is a thick old guy. He likes to look at birds through the patio door all day."
   },
@@ -757,6 +829,7 @@ export const DOGS = [
     image: image72,
     breed: 8,
     rating: 2.4,
+    numRatings: 20, 
     date: "2021-02-05T04:19Z",
     description: "He's the goofiest Chihuahua to ever walk the planet. He loves to dress up in silly costumes too!"
   },
@@ -766,6 +839,7 @@ export const DOGS = [
     image: image73,
     breed: 9,
     rating: 2.2,
+    numRatings: 20, 
     date: "2021-01-06T08:19Z",
     description: "She may not have all of her fur, but we think she's still the cutest dog!"
   },
@@ -775,6 +849,7 @@ export const DOGS = [
     image: image74,
     breed: 13,
     rating: 4.1,
+    numRatings: 20, 
     date: "2021-02-05T04:19Z",
     description: "She's the people's princess. This English Springer Spaniel is our family's royalty."
   },
@@ -784,6 +859,7 @@ export const DOGS = [
     image: image75,
     breed: 13,
     rating: 4.2,
+    numRatings: 20, 
     date: "2021-03-26T04:19Z",
     description: "Edward is king of the English Springer Spaniels! We live to serve him."
   },
@@ -793,6 +869,7 @@ export const DOGS = [
     image: image76,
     breed: 13,
     rating: 4.3,
+    numRatings: 20, 
     date: "2020-08-05T04:20Z",
     description: "She can sniff out trouble from a mile away. Springers are great protectors!"
   },
@@ -802,6 +879,7 @@ export const DOGS = [
     image: image77,
     breed: 19,
     rating: 3.5,
+    numRatings: 20, 
     date: "2020-12-05T04:19Z",
     description: "We have to be careful taking Floof out in the show... we might lose her!"
   },
@@ -811,6 +889,7 @@ export const DOGS = [
     image: image78,
     breed: 19,
     rating: 3.6,
+    numRatings: 20, 
     date: "2021-01-11T04:19Z",
     description: "Andy has more energy than any dog I've ever seen. He wants to explore or play with his toys from dusk to dawn."
   },
@@ -820,6 +899,7 @@ export const DOGS = [
     image: image79,
     breed: 19,
     rating: 3.7,
+    numRatings: 20, 
     date: "2021-02-12T03:19Z",
     description: "Pomeranians are so fiesty... Gage loves to chase the cat, but they wind up snuggling together every night."
   },
@@ -829,6 +909,7 @@ export const DOGS = [
     image: image80,
     breed: 19,
     rating: 3.0,
+    numRatings: 20, 
     date: "2021-03-16T03:19Z",
     description: "Peppa is a salty little Pom-Pom. She loves to go hiking with us, but we have to watch her closely so that she doesn't jump in the lake."
   },
@@ -838,6 +919,7 @@ export const DOGS = [
     image: image81,
     breed: 9,
     rating: 2.3,
+    numRatings: 20, 
     date: "2020-05-12T03:19Z",
     description: "Yep, he looks like a stuffed sausage, but he's all ours."
   },
@@ -847,6 +929,7 @@ export const DOGS = [
     image: image82,
     breed: 9,
     rating: 4.0,
+    numRatings: 20, 
     date: "2020-07-12T03:19Z",
     description: "You don't know fun until you have a weiner dog like Willow!"
   },
@@ -856,6 +939,7 @@ export const DOGS = [
     image: image83,
     breed: 9,
     rating: 4.4,
+    numRatings: 20, 
     date: "2020-05-12T03:19Z",
     description: "Angelo is our little angel. Who could deny a face like that?"
   },
@@ -865,6 +949,7 @@ export const DOGS = [
     image: image84,
     breed: 9,
     rating: 3.3,
+    numRatings: 20, 
     date: "2020-11-12T08:22Z",
     description: "He loves to bark at the squirrels and birds. He's a low-riding snugglebug!"
   },
@@ -874,6 +959,7 @@ export const DOGS = [
     image: image85,
     breed: 4,
     rating: 3.6,
+    numRatings: 20, 
     date: "2020-09-12T03:19Z",
     description: "He floats like a butterfly and stings like a bee! Not really... he's a soft-hearted giant."
   },
@@ -883,6 +969,7 @@ export const DOGS = [
     image: image86,
     breed: 4,
     rating: 3.7,
+    numRatings: 20, 
     date: "2020-10-09T09:19Z",
     description: "They say that Boxers have sad faces, but she only makes us smile."
   },
@@ -892,6 +979,7 @@ export const DOGS = [
     image: image87,
     breed: 4,
     rating: 3.9,
+    numRatings: 20, 
     date: "2021-03-19T03:19Z",
     description: "Baxter looks so innocent here, but he can easily get into trouble as a curious Boxer puppy!"
   },
@@ -901,6 +989,7 @@ export const DOGS = [
     image: image88,
     breed: 4,
     rating: 3.5,
+    numRatings: 20, 
     date: "2021-01-22T03:19Z",
     description: "Anna looks really serious in this pic, but she was just rolling around in a pile of leaves with our toddler a few minutes before."
   },
@@ -910,6 +999,7 @@ export const DOGS = [
     image: image89,
     breed: 10,
     rating: 4.1,
+    numRatings: 20, 
     date: "2020-05-15T12:19Z",
     description: "Here's Abbey at her peak puppy cuteness! Everyone should have a Dalmatian puppy, but be warned... they have endless energy!"
   },
@@ -919,6 +1009,7 @@ export const DOGS = [
     image: image90,
     breed: 10,
     rating: 3.3,
+    numRatings: 20, 
     date: "2020-11-12T03:19Z",
     description: "She rules the roost at our house. Lucy had a litter of 4 puppies last spring."
   },
@@ -928,6 +1019,7 @@ export const DOGS = [
     image: image91,
     breed: 10,
     rating: 3.4,
+    numRatings: 20, 
     date: "2020-12-02T03:19Z",
     description: "Leon looks like he belongs in a fire station, but he's actually a great hunting dog. He's been on many duck expeditions with us."
   },
@@ -937,6 +1029,7 @@ export const DOGS = [
     image: image92,
     breed: 10,
     rating: 3.5,
+    numRatings: 20, 
     date: "2021-01-12T03:19Z",
     description: "Dewey wants to be everyone's friend. Unfortunately, he'll try to get on your lap if you take a seat. He doesn't know his own size!"
   },
@@ -946,6 +1039,7 @@ export const DOGS = [
     image: image93,
     breed: 10,
     rating: 4.1,
+    numRatings: 20, 
     date: "2020-08-12T03:19Z",
     description: "Harold has been a perfect Dalmatian puppy. Just don't forget to play with him every day or he'll find other outlets for his energy."
   },
@@ -955,6 +1049,7 @@ export const DOGS = [
     image: image94,
     breed: 17,
     rating: 3.9,
+    numRatings: 20, 
     date: "2021-03-01T03:19Z",
     description: "His name is a little obvious for a Jack Russell, but he really looks like a Jack!"
   },
@@ -964,6 +1059,7 @@ export const DOGS = [
     image: image95,
     breed: 17,
     rating: 3.8,
+    numRatings: 20, 
     date: "2021-01-01T08:19Z",
     description: "Marty is so playful. He's also an escape artist that seems to climb under or over any barrier that we put in his way."
   },
@@ -973,6 +1069,7 @@ export const DOGS = [
     image: image96,
     breed: 17,
     rating: 3.7,
+    numRatings: 20, 
     date: "2021-02-01T11:19Z",
     description: "Lulu was having a blast at the dog park!"
   },
@@ -982,6 +1079,7 @@ export const DOGS = [
     image: image97,
     breed: 20,
     rating: 4.0,
+    numRatings: 20, 
     date: "2020-05-01T07:19Z",
     description: "Winter is the most beautiful Standard Poodle. Her grooming is detailed and lengthy, but she's a champion."
   },
@@ -991,6 +1089,7 @@ export const DOGS = [
     image: image98,
     breed: 20,
     rating: 3.8,
+    numRatings: 20, 
     date: "2020-09-01T08:19Z",
     description: "Bowie has an other-worldy look about him, but he's a super-loving big Poodle. He's great with the kids, and he lets them climb all over him."
   },
@@ -1000,6 +1099,7 @@ export const DOGS = [
     image: image99,
     breed: 20,
     rating: 4.2,
+    numRatings: 20, 
     date: "2021-02-25T07:19Z",
     description: "She's our little red Toy Poodle. She likes to sun herself on the patio whenever we let her outside."
   }

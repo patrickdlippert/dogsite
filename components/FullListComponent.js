@@ -23,7 +23,7 @@ class FullList extends Component {
             const needsUri = item.image.toString().includes('.png'); // Check for full file path vs imported image
             return (
                 <View style={styles.itemContainer}>
-                    <TouchableOpacity onPress={() => navigate('DogDetail', { dog: item }  )} >
+                    <TouchableOpacity onPress={() => navigate('DogDetail', { dogId: item.id, dogName: item.name }  )} >
                     {needsUri
                       ? <ImageBackground source={{uri: item.image}} style={styles.itemImage}/>
                       : <ImageBackground source={item.image} style={styles.itemImage}/>

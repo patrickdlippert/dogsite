@@ -2,6 +2,7 @@ export const DOGS_LOADING = 'DOGS_LOADING';
 export const ADD_DOGS = 'ADD_DOGS';
 export const DOGDS_FAILED = 'DOGS_FAILED';
 export const ADD_DOG = 'ADD_DOG';
+export const ADD_DOG_RATING = 'ADD_DOG_RATING';
 
 export const ADD_COMMENT = 'ADD_COMMENT';
 export const ADD_COMMENTS = 'ADD_COMMENTS';

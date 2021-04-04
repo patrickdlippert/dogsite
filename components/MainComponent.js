@@ -41,7 +41,7 @@ function HomeStackScreen() {
       <HomeStack.Screen
         name="DogDetail" 
         component={DogDetail}
-        options={({ route }) => ({ title: route.params.dog.name })}
+        options={({ route }) => ({ title: route.params.dogName })}
       />  
       <HomeStack.Screen
         name="FullList" 
@@ -138,7 +138,7 @@ class Main extends Component {
               name="DogDetail" 
               component={DogDetail}
               options={({ route, navigation }) => ({ 
-                headerTitle: route.params.dog.name, 
+                headerTitle: route.params.dogName, 
                 headerTitleAlign: 'center',
                 headerLeft: () => ( <Text style={styles.textLink} onPress={ () => { navigation.goBack()}}>Back</Text>),
                 headerRight:''
