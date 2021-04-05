@@ -53,8 +53,8 @@ function RenderDogDetail(props) {
                             />
 
                         <Icon
-                            name={'star'}
-                            type='font-awesome'
+                            name={'paw'}
+                            type='font-awesome-5'
                             color='#f1c410' 
                             size={16}
                             raised
