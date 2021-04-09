@@ -41,7 +41,11 @@ function RenderDogDetail(props) {
                       ? <ImageBackground source={{uri: dog.image}} style={styles.itemImage}/>
                       : <ImageBackground source={dog.image} style={styles.itemImage}/>
                     }
-
+                    {/* Put two icons on top of the image: a red heart icon to add the dog
+                        to favorites and a gold paw icon to submit a review/rating of the dog.
+                        The gold paw turns to gray once the review has been submitted. A dog
+                        may only be reviewed once.
+                    */}
                     <View style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 245}}>
                         <Icon
                             name={favorite ? 'heart' : 'heart-o'}
@@ -67,6 +71,10 @@ function RenderDogDetail(props) {
                     </View>
                 </View>
 
+                {/* Beneath the image, display the description/comment that was submitted with the
+                    image. This is followed by the dog's breed that was selected at upload time.
+                */}
+
                 <Text style={{margin: 10}}>
                     {dog.description}
                 </Text>
@@ -74,6 +82,10 @@ function RenderDogDetail(props) {
                     Dog Breed: {breeds[dog.breed].name}
                 </Text>
 
+                {/* If the dog has been rated (weighted average from 1-5), display the corresponding
+                    number of golden paws. If the dog has not received any ratings, use simple text
+                    to indicate this.
+                */}
                 {dog.rating
                     ? <View style={{flex:1, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
                             <Rating
@@ -135,6 +147,8 @@ class DogDetail extends Component {
         this.props.deleteFavorite(dogId);
     }
 
+    // This function updates the weighted average rating in the selected "dogs" state object and it
+    // then updates the "reviews" objects for the user to track dogs that have been rated.
     updateRating(dogId, rating) {
         this.props.postDogRating(dogId, rating);
         this.props.postReview(dogId, rating);
@@ -169,85 +183,83 @@ class DogDetail extends Component {
                             onRequestClose={() => this.toggleModal()}
                         >
                             <View style={styles.modal}>
-                            <View style={{
-                                backgroundColor: 'rgb(255,255,255)',
-                                alignItems: 'center',
-                                width: 300,
-                                height: 300,
-                                }}
-                            >   
+                                <View style={styles.modalBox}>   
 
-                            { reviewed ?
-                                (<View>
-                                    <Text style={[styles.title, { color: '#9020d1'}]}>
-                                        You have already reviewed this dawg!
-                                    </Text>
-                                    <View style={styles.buttonSection}>
-                                    <Text style={styles.textInfo}>Your Rating: {reviewed.rating}</Text>
-                                    <Text style={styles.textInfo}>Date: {format(new Date(reviewed.date), 'MMMM do, yyyy H:mma')}{'\n\n'}</Text>
+                                {/* If the user has already reviewed/rated this dog, do not allow them
+                                to do a redundant review. Instead, have the modal notify the user with
+                                the rating and date of their review. Otherwise, have the modal present
+                                the Ratings picker with a submit and cancel buttons. */}
+
+                                { reviewed ?
+                                    (<View>
+                                        <Text style={[styles.title, { color: '#9020d1'}]}>
+                                            You have already reviewed this dawg!
+                                        </Text>
+                                        <View style={styles.buttonSection}>
+                                        <Text style={styles.textInfo}>Your Rating: {reviewed.rating}</Text>
+                                        <Text style={styles.textInfo}>Date: {format(new Date(reviewed.date), 'MMMM do, yyyy H:mma')}{'\n\n'}</Text>
+                                        
+                                            <Button
+                                                buttonStyle={styles.buttonCancel}
+                                                onPress={() => {
+                                                    this.toggleModal();
+                                                    this.resetForm();
+                                                }}
+                                                title='Cancel'
+                                            />
+                                        </View>
+                                    </View>)
+
+                                :   (<View>
+                                        <Text style={[styles.title, { color: '#9020d1'}]}>
+                                            Rate this dawg!
+                                        </Text>
+                                        <Rating
+                                            startingValue={parseInt(this.state.newRating)}
+                                            imageSize={40}
+                                            minValue={1}
+                                            showRating
+                                            onFinishRating={newRating => this.setState({newRating: newRating})} 
+                                            style={{paddingVertical: 10}}
+
+                                            type='custom'
+                                            ratingImage={PAW_IMAGE}
+                                            ratingColor='#f1c410' 
+                                            ratingBackgroundColor='#c8c7c8'
+                                        />
+
                                     
-                                        <Button
-                                            buttonStyle={styles.buttonCancel}
-                                            onPress={() => {
-                                                this.toggleModal();
-                                                this.resetForm();
-                                            }}
-                                            title='Cancel'
-                                        />
-                                    </View>
-                                </View>)
+                                        <View style={styles.buttonSection}>
+                                            <Button
+                                                buttonStyle={styles.buttonSubmit}
+                                                onPress={() => {
+                                                    this.updateRating(dog.id, this.state.newRating);
+                                                    this.toggleModal();
+                                                }}
+                                                title='Submit'
+                                            />
 
-                            :   (<View>
-                                    <Text style={[styles.title, { color: '#9020d1'}]}>
-                                        Rate this dawg!
-                                    </Text>
-                                    <Rating
-                                        startingValue={parseInt(this.state.newRating)}
-                                        imageSize={40}
-                                        minValue={1}
-                                        showRating
-                                        onFinishRating={newRating => this.setState({newRating: newRating})} 
-                                        style={{paddingVertical: 10}}
+                                            <Button
+                                                buttonStyle={styles.buttonCancel}
+                                                onPress={() => {
+                                                    this.toggleModal();
+                                                    this.resetForm();
+                                                }}
+                                                title='Cancel'
+                                            />
+                                        </View>
+                                    </View>)
 
-                                        type='custom'
-                                        ratingImage={PAW_IMAGE}
-                                        ratingColor='#f1c410' 
-                                        ratingBackgroundColor='#c8c7c8'
-                                    />
-
-                                
-                                    <View style={styles.buttonSection}>
-                                        <Button
-                                            buttonStyle={styles.buttonSubmit}
-                                            onPress={() => {
-                                                this.updateRating(dog.id, this.state.newRating);
-                                                this.toggleModal();
-                                            }}
-                                            title='Submit'
-                                        />
-
-                                        <Button
-                                            buttonStyle={styles.buttonCancel}
-                                            onPress={() => {
-                                                this.toggleModal();
-                                                this.resetForm();
-                                            }}
-                                            title='Cancel'
-                                        />
-                                    </View>
-                                </View>)
-
-                            }
-                            </View>
+                                }
+                                </View>
                             </View>
 
                         </Modal>
 
-
                     </ScrollView>
                 </View>
 
-            
+                {/* Scrolling ad banner that remains fixed at the bottom of the screen */}
                 <View  style={{flex: .15, position: 'absolute', left: 0, right: 0, bottom: 0}}>
                     <AdCarousel resources={this.props.sponsors.sponsors} />
                 </View>
@@ -290,7 +302,14 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+        backgroundColor: 'rgba(0, 0, 0, 0.7)'
+    },
+    modalBox: {
+        backgroundColor: 'rgb(255,255,255)',
+        alignItems: 'center',
+        width: 300,
+        height: 300,
+        borderRadius: 5
     },
     title: {
         marginTop: 10,
