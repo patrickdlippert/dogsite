@@ -16,7 +16,7 @@ export const dogs = (state = { isLoading: true,
             console.log(dog);
             return {...state, dogs: state.dogs.concat(dog)};
 
-        case ActionTypes.ADD_DOG_RATING:
+        case ActionTypes.UPDATE_DOG_RATING:
             const ratingpair = action.payload; // ratingpair has the dog's id and a new rating being submitted
             const index = state.dogs.findIndex(dog => dog.id === ratingpair.id); // find index of the dog
             const newArray = [...state.dogs]; //making a new array

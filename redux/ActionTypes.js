@@ -2,7 +2,7 @@ export const DOGS_LOADING = 'DOGS_LOADING';
 export const ADD_DOGS = 'ADD_DOGS';
 export const DOGDS_FAILED = 'DOGS_FAILED';
 export const ADD_DOG = 'ADD_DOG';
-export const ADD_DOG_RATING = 'ADD_DOG_RATING';
+export const UPDATE_DOG_RATING = 'UPDATE_DOG_RATING';
 
 export const ADD_COMMENT = 'ADD_COMMENT';
 export const ADD_COMMENTS = 'ADD_COMMENTS';
@@ -17,4 +17,6 @@ export const SPONSORS = 'ADD_SPONSORS';
 export const SPONSORS_FAILED = 'SPONSORS_FAILED';
 
 export const ADD_FAVORITE = 'ADD_FAVORITE';
-export const DELETE_FAVORITE = 'DELETE_FAVORTIE';
+export const DELETE_FAVORITE = 'DELETE_FAVORITE';
+
+export const ADD_REVIEW = 'ADD_REVIEW';

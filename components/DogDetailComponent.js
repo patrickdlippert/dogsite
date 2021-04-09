@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { Text, View, Modal, ImageBackground, StyleSheet, ScrollView } from 'react-native';
 import { Card, Rating, Icon, Button } from 'react-native-elements';
 import { connect } from 'react-redux';
-import { postFavorite,  deleteFavorite, postDogRating } from '../redux/ActionCreators';
+import { postFavorite,  deleteFavorite, postDogRating, postReview } from '../redux/ActionCreators';
 import AdCarousel from './AdCarouselComponent';
+import { format } from 'date-fns';
 
 const PAW_IMAGE = require('../assets/images/pawr.png');
 
@@ -12,6 +13,7 @@ const mapStateToProps = state => {
         dogs: state.dogs,
         breeds: state.breeds,
         favorites: state.favorites,
+        reviews: state.reviews,
         sponsors: state.sponsors
     };
   };
@@ -19,8 +21,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
     postFavorite: dogId => (postFavorite(dogId)),
     deleteFavorite: dogId => (deleteFavorite(dogId)),
-    postDogRating: (dogId, rating) => (postDogRating(dogId, rating))
-    
+    postDogRating: (dogId, rating) => (postDogRating(dogId, rating)),
+    postReview: (dogId, rating) => (postReview(dogId, rating))
 };
 
 // The RenderDogDetail function assembles the card for the dog. Note that a clickable icon is
@@ -29,7 +31,7 @@ const mapDispatchToProps = {
 
 function RenderDogDetail(props) {
 
-    const {dog, breeds, favorite} = props;
+    const {dog, breeds, favorite, reviewed } = props;
     if (dog) {
         const needsUri = dog.image.toString().includes('.png'); // Check for full file path vs imported image
         return (
@@ -55,7 +57,7 @@ function RenderDogDetail(props) {
                         <Icon
                             name={'paw'}
                             type='font-awesome-5'
-                            color='#f1c410' 
+                            color={reviewed ? '#808080' : '#f1c410'}   
                             size={16}
                             raised
                             reverse
@@ -135,6 +137,7 @@ class DogDetail extends Component {
 
     updateRating(dogId, rating) {
         this.props.postDogRating(dogId, rating);
+        this.props.postReview(dogId, rating);
         this.toggleModal();
     }
 
@@ -142,77 +145,109 @@ class DogDetail extends Component {
         const dogId = this.props.route.params.dogId;
         const dog = this.props.dogs.dogs[dogId];
         const breeds = this.props.breeds.breeds;
+        //const reviewed = this.props.reviews.includes(dog.id);
+        const reviewed = this.props.reviews.filter(review => review.dogId === dogId)[0];
         
         return (
             <View style={styles.adContainer}>
                 <View style={{flex: .85}}>
-                <ScrollView>
-                    <RenderDogDetail 
-                        dog={dog} 
-                        breeds={breeds} 
-                        favorite={this.props.favorites.includes(dog.id)}
-                        markFavorite={() => this.markFavorite(dog.id)}
-                        removeFavorite={() => this.removeFavorite(dog.id)}
-                        onShowModal={() => this.toggleModal()}
-                        updateRating={() => this.updateRating(dog.id, 4)}
-                    />
-                    <Modal
-                        animationType={'fade'}
-                        transparent={true}
-                        visible={this.state.showModal}
-                        onRequestClose={() => this.toggleModal()}
-                    >
-                        <View style={styles.modal}>
-                        <View style={{
-                             backgroundColor: 'rgb(255,255,255)',
-                             alignItems: 'center',
-                            width: 300,
-                            height: 300,
-                            }}
-                        >   
-                            <Text style={[styles.title, { color: '#9020d1'}]}>
-                                Rate this dawg!
-                            </Text>
-                            <Rating
-                                startingValue={parseInt(this.state.newRating)}
-                                imageSize={40}
-                                minValue={1}
-                                showRating
-                                onFinishRating={newRating => this.setState({newRating: newRating})} 
-                                style={{paddingVertical: 10}}
+                    <ScrollView>
+                        <RenderDogDetail 
+                            dog={dog} 
+                            breeds={breeds} 
+                            favorite={this.props.favorites.includes(dog.id)}
+                            reviewed={reviewed}
+                            markFavorite={() => this.markFavorite(dog.id)}
+                            removeFavorite={() => this.removeFavorite(dog.id)}
+                            onShowModal={() => this.toggleModal()}
+                            updateRating={() => this.updateRating(dog.id, 4)}
+                        />
+                        <Modal
+                            animationType={'fade'}
+                            transparent={true}
+                            visible={this.state.showModal}
+                            onRequestClose={() => this.toggleModal()}
+                        >
+                            <View style={styles.modal}>
+                            <View style={{
+                                backgroundColor: 'rgb(255,255,255)',
+                                alignItems: 'center',
+                                width: 300,
+                                height: 300,
+                                }}
+                            >   
 
-                                type='custom'
-                                ratingImage={PAW_IMAGE}
-                                ratingColor='#f1c410' 
-                                ratingBackgroundColor='#c8c7c8'
-                            />
-                            
-                            <View style={styles.buttonSection}>
-                                <Button
-                                    buttonStyle={styles.buttonSubmit}
-                                    onPress={() => {
-                                        this.updateRating(dog.id, this.state.newRating);
-                                        this.toggleModal();
-                                    }}
-                                    title='Submit'
-                                />
+                            { reviewed ?
+                                (<View>
+                                    <Text style={[styles.title, { color: '#9020d1'}]}>
+                                        You have already reviewed this dawg!
+                                    </Text>
+                                    <View style={styles.buttonSection}>
+                                    <Text style={styles.textInfo}>Your Rating: {reviewed.rating}</Text>
+                                    <Text style={styles.textInfo}>Date: {format(new Date(reviewed.date), 'MMMM do, yyyy H:mma')}{'\n\n'}</Text>
+                                    
+                                        <Button
+                                            buttonStyle={styles.buttonCancel}
+                                            onPress={() => {
+                                                this.toggleModal();
+                                                this.resetForm();
+                                            }}
+                                            title='Cancel'
+                                        />
+                                    </View>
+                                </View>)
 
-                                <Button
-                                    buttonStyle={styles.buttonCancel}
-                                    onPress={() => {
-                                        this.toggleModal();
-                                        this.resetForm();
-                                    }}
-                                    title='Cancel'
-                                />
+                            :   (<View>
+                                    <Text style={[styles.title, { color: '#9020d1'}]}>
+                                        Rate this dawg!
+                                    </Text>
+                                    <Rating
+                                        startingValue={parseInt(this.state.newRating)}
+                                        imageSize={40}
+                                        minValue={1}
+                                        showRating
+                                        onFinishRating={newRating => this.setState({newRating: newRating})} 
+                                        style={{paddingVertical: 10}}
+
+                                        type='custom'
+                                        ratingImage={PAW_IMAGE}
+                                        ratingColor='#f1c410' 
+                                        ratingBackgroundColor='#c8c7c8'
+                                    />
+
+                                
+                                    <View style={styles.buttonSection}>
+                                        <Button
+                                            buttonStyle={styles.buttonSubmit}
+                                            onPress={() => {
+                                                this.updateRating(dog.id, this.state.newRating);
+                                                this.toggleModal();
+                                            }}
+                                            title='Submit'
+                                        />
+
+                                        <Button
+                                            buttonStyle={styles.buttonCancel}
+                                            onPress={() => {
+                                                this.toggleModal();
+                                                this.resetForm();
+                                            }}
+                                            title='Cancel'
+                                        />
+                                    </View>
+                                </View>)
+
+                            }
                             </View>
                             </View>
-                        </View>
-                    </Modal>
+
+                        </Modal>
 
 
-                </ScrollView>
+                    </ScrollView>
                 </View>
+
+            
                 <View  style={{flex: .15, position: 'absolute', left: 0, right: 0, bottom: 0}}>
                     <AdCarousel resources={this.props.sponsors.sponsors} />
                 </View>
@@ -243,6 +278,10 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center'
     },
+    textInfo: {
+        color: 'black',
+        fontSize: 12,
+    },
     adContainer: {
         flex: 1,
 
@@ -256,10 +295,11 @@ const styles = StyleSheet.create({
     title: {
         marginTop: 10,
         fontSize: 22,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        textAlign: 'center'
     },
     buttonSection: {
-        width: '75%',
+        width: 225,
         alignSelf: 'center',
         marginTop: 20
     },

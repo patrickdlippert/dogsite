@@ -5,6 +5,7 @@ import { dogs } from './dogs';
 import { breeds } from './breeds';
 import { sponsors } from './sponsors';
 import { favorites } from './favorites';
+import { reviews }  from './reviews';
 import { persistStore, persistCombineReducers } from 'redux-persist';
 import storage from 'redux-persist/es/storage';
 
@@ -20,7 +21,8 @@ export const ConfigureStore = () => {
             dogs,
             breeds,
             sponsors,
-            favorites
+            favorites,
+            reviews
         }),
         applyMiddleware(thunk, logger)
     );

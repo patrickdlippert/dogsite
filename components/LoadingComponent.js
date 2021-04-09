@@ -1,10 +1,11 @@
 import React from 'react';
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
+import { BallIndicator } from 'react-native-indicators';
 
 function Loading() {
     return (
         <View style={styles.loadingView}>
-            <ActivityIndicator size='large' color='#5637DD' />
+            <BallIndicator  color='#5637DD' />
             <Text style={styles.loadingText}>Loading . . .</Text>
         </View>
     );

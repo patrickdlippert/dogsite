@@ -30,7 +30,7 @@ export const postDogRating = (id, rating) => dispatch => {
 };
 
 export const updateDogRating = ratingpair => ({
-    type: ActionTypes.ADD_DOG_RATING,
+    type: ActionTypes.UPDATE_DOG_RATING,
     payload: ratingpair
 });
 
@@ -50,3 +50,19 @@ export const deleteFavorite = dogId => ({
     type: ActionTypes.DELETE_FAVORITE,
     payload: dogId
 })
+
+
+export const postReview = (dogId, rating) => dispatch => {
+    const newReview = {
+        dogId,
+        rating
+    };
+    setTimeout(() => {
+        dispatch(addReview(newReview));
+    }, 1000);
+};
+
+export const addReview = reviewData => ({
+    type: ActionTypes.ADD_REVIEW,
+    payload: reviewData
+});
