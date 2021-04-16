@@ -52,15 +52,15 @@ class Contest extends Component {
                         }
                         
                         <Animatable.View 
-                        animation='bounceOutUp'
+                        animation='bounceInUp'
                         duration={3000}
                         delay={1000}
-                        style={{position: 'absolute', top: 100, left: 0, right: 0, bottom: 0}}>
+                        style={{position: 'absolute', top: 200, left: 0, right: 200, bottom: 0}}>
                             <Icon
                                 name='trophy'
                                 type='font-awesome'
                                 color='#f1c410'
-                                size={96}
+                                size={64}
                                 />
                         </Animatable.View>
 
