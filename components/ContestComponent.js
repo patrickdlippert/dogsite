@@ -47,7 +47,7 @@ class Contest extends Component {
                     animation='tada'
                     duration={2000}
                     delay={500}
-                    marginBottom={5}
+                    marginBottom={10}
                 >
                 <Card>
                     <Card.Title style={styles.title}>Winner of last month's contest!</Card.Title>
@@ -82,7 +82,7 @@ class Contest extends Component {
                         <ImageBackground source={sponsor.image} style={styles.sponsorImage}/>
                     </TouchableOpacity>
        
-                    <Text style={{margin: 10}}>
+                    <Text style={styles.textQuote}>
                         {dog.description}
                     </Text>
 
@@ -208,6 +208,12 @@ const styles = StyleSheet.create({
         marginBottom: 5,
         fontSize: 20,
         fontWeight: 'bold'
+    },
+    textQuote: {
+        fontStyle: 'italic',
+        fontSize: 14,
+        fontWeight: 'bold',
+        margin:10
     }
 });
 

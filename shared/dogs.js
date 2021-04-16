@@ -1480,7 +1480,7 @@ export const DOGS = [
     rating: 3.5,
     numRatings: 20, 
     date: "2021-04-15T12:19Z",
-    description: "Sadie is a high maintenance pup. She gets groomed every month and isists on getting brushed out every night. What a sweet little pain!"
+    description: "Sadie is a high maintenance pup. She gets groomed every month and insists on getting brushed out every night. What a sweet little pain!"
   },
   {
     id: 123,
