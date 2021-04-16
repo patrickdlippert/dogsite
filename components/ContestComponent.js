@@ -87,7 +87,8 @@ class Contest extends Component {
                     </Text>
 
                     <Text style={{margin: 10}}>
-                        Submit your dawg by checking the entry box on the profile tab.  The winner receives a year's supply of pet food compliments of {sponsor.name}. Good luck! Here are the latest entries for this month's pageant.
+                        Submit your dawg by checking the entry box on the profile tab.  The winner receives a year's supply of pet food compliments of {sponsor.name}!{"\n\n"}
+                        Here are the latest entries for this month's pageant:
                     </Text>
                 </Card>
                 </Animatable.View>
