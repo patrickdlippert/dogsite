@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, ScrollView, Alert, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
+import { Text, View, StyleSheet, ScrollView, Alert, TextInput, TouchableOpacity, ImageBackground, Modal } from 'react-native';
 import { Button, CheckBox } from 'react-native-elements';
 import {Picker} from '@react-native-picker/picker';
 import * as ImagePicker from 'expo-image-picker';
@@ -9,6 +9,7 @@ import * as MediaLibrary from 'expo-media-library';
 import { KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import { postDog } from '../redux/ActionCreators';
 import { connect } from 'react-redux';
+import ContestRules from './ContestRulesComponent';
 
 const mapStateToProps = state => {
     return {
@@ -31,7 +32,13 @@ class ProfileEditor extends Component {
             dogBreed: '',
             comment: '',
             enterContest: false,
+            showModalRules: false
         };
+        this.toggleModalRules = this.toggleModalRules.bind(this);
+    }
+
+    toggleModalRules() {
+        this.setState({showModalRules: !this.state.showModalRules});
     }
 
     handleImageChange = (path) => {this.setState({imageUrl: path})};
@@ -252,10 +259,10 @@ class ProfileEditor extends Component {
                 <CheckBox
                     title={ 
                         <Text>
-                            <Text>Check to enter this month's Pooch Parade contest.</Text>
+                            <Text>Check to enter this month's Pooch Pageant contest.</Text>
                             <Text
                                 style={{color: '#5637DD' }} 
-                                onPress={() => console.log('display rules')}> Official Rules.
+                                onPress={() => this.toggleModalRules()}> Official Rules.
                             </Text>
                         </Text>
                     }
@@ -286,6 +293,30 @@ class ProfileEditor extends Component {
                     title='Cancel'
                 />
             </View>
+   
+
+        {/* This is a Modal within a Modal for when the user clicks "Official Rules link within
+        the outer Modal. This is a simple ScrollView with the text for the rules. */}
+        <Modal
+            animationType = {"slide"}
+            transparent={false}
+            visible={this.state.showModalRules}
+            onRequestClose={() => this.toggleModalRules()}
+        >
+            <ScrollView style={{marginTop:15}}>
+                <ContestRules/>
+            </ScrollView>
+            
+            <View style={styles.buttonSection}>
+                <Button
+                    buttonStyle={styles.buttonSubmit}
+                    onPress={() => {
+                        this.toggleModalRules();
+                    }}
+                    title='Close'
+                />
+            </View>
+        </Modal>
         </KeyboardAwareScrollView>
         );
     }

@@ -119,6 +119,11 @@ import image116 from '../assets/images/dogs/dog116.jpg';
 import image117 from '../assets/images/dogs/dog117.jpg';
 import image118 from '../assets/images/dogs/dog118.jpg';
 import image119 from '../assets/images/dogs/dog119.jpg';
+import image120 from '../assets/images/dogs/dog120.jpg';
+import image121 from '../assets/images/dogs/dog121.jpg';
+import image122 from '../assets/images/dogs/dog122.jpg';
+import image123 from '../assets/images/dogs/dog123.jpg';
+import image124 from '../assets/images/dogs/dog124.jpg';
 
 export const DOGS = [
     {
@@ -1231,7 +1236,7 @@ export const DOGS = [
     breed: 30,
     rating: 4.3,
     numRatings: 20, 
-    date: "2020-11-12T03:19Z",
+    date: "2021-03-12T03:19Z",
     description: "Lucille is our little social butterfly this Spring. She loves to play with the kids in the yard."
   },
   {
@@ -1242,7 +1247,7 @@ export const DOGS = [
     breed: 21,
     rating: 3.4,
     numRatings: 20, 
-    date: "2021-04-02T03:19Z",
+    date: "2021-03-11T03:19Z",
     description: "Archie may not look all that happy on the outside, but I swear that he loves dressing up for spring."
   },
   {
@@ -1253,7 +1258,7 @@ export const DOGS = [
     breed: 19,
     rating: 3.5,
     numRatings: 20, 
-    date: "2021-04-12T03:19Z",
+    date: "2021-03-20T03:19Z",
     description: "Zippo is the Pom-Pom who likes to get out in the sun. If he's inside, he'll find any ray of light coming from a window to help warm up. He's really ready for spring!"
   },
   {
@@ -1264,7 +1269,7 @@ export const DOGS = [
     breed: 20,
     rating: 4.1,
     numRatings: 20, 
-    date: "2021-04-12T03:19Z",
+    date: "2021-03-22T03:19Z",
     description: "Connie is dressed in her Easter finest. Who could deny her beauty?"
   },
   {
@@ -1275,7 +1280,7 @@ export const DOGS = [
     breed: 23,
     rating: 3.9,
     numRatings: 20, 
-    date: "2021-04-01T03:19Z",
+    date: "2021-03-24T03:19Z",
     description: "Izzy is just chilling patiently. Let's get this Easter Egg thing going... I hope those eggs have treats in them for me!"
   },
   {
@@ -1286,8 +1291,8 @@ export const DOGS = [
     breed: 17,
     rating: 4.4,
     numRatings: 20, 
-    date: "2021-04-01T08:19Z",
-    description: "I'm the Easter Bunny you always wanted. Oops... I think I ate the Cadbury Bunny!"
+    date: "2021-03-29T08:19Z",
+    description: "I'm the Easter Bunny you always wanted. Oops... I think I ate the Cadbury Bunny! -McLovin"
   },
   {
     id: 106,
@@ -1305,32 +1310,198 @@ export const DOGS = [
     name:"Winter",
     image: image107,
     enterContest: true, 
-    breed: 10,
+    breed: 28,
     rating: 4.0,
     numRatings: 20, 
-    date: "2021-04-01T07:19Z",
-    description: "We don't have any Dalmatian puppies here... nothing but us bunnies!"
+    date: "2021-04-02T07:19Z",
+    description: "Winter is white as snow, but she's really a summer dog."
   },
   {
     id: 108,
-    name:"Frosty",
+    name:"Angie",
     image: image108,
     enterContest: true, 
-    breed: 28,
+    breed: 26,
     rating: 3.8,
     numRatings: 20, 
-    date: "2021-04-01T08:19Z",
-    description: "I'm just gonna pretend that you didn't put these things on my head. I might just shred them up for you if you take another picture!"
+    date: "2021-04-14T08:19Z",
+    description: "Just chillin' outdoors this time of year."
   },
   {
     id: 109,
     name:"Tracy",
     image: image109,
     enterContest: true, 
-    breed: 9,
+    breed: 15,
     rating: 4.2,
-    numRatings: 20, 
+    numRatings: 15, 
     date: "2021-04-06T07:19Z",
-    description: "Do these ears make me look fat?"
+    description: "Remember to hydrate and bring sunscreen. I'm a ginger, afterall!"
+  },
+  {
+    id: 110,
+    name:"Barton",
+    image: image110,
+    enterContest: true, 
+    breed: 5,
+    rating: 4.1,
+    numRatings: 20, 
+    date: "2021-04-12T03:19Z",
+    description: "Barton is an all-American Bulldog. He's not afraid of fireworks at all!"
+  },
+  {
+    id: 111,
+    name:"Tango",
+    image: image111,
+    enterContest: true, 
+    breed: 21,
+    rating: 3.9,
+    numRatings: 16, 
+    date: "2021-03-11T03:19Z",
+    description: "I'd be a lifeguard dog all summer long if my humans would just leave me here at the beach."
+  },
+  {
+    id: 112,
+    name:"Zippo",
+    image: image112,
+    enterContest: true, 
+    breed: 19,
+    rating: 3.5,
+    numRatings: 20, 
+    date: "2021-03-20T03:19Z",
+    description: "Zippo is the Pom-Pom who likes to get out in the sun. If he's inside, he'll find any ray of light coming from a window to help warm up. He's really ready for spring!"
+  },
+  {
+    id: 113,
+    name:"Connie",
+    image: image113,
+    enterContest: true, 
+    breed: 20,
+    rating: 4.1,
+    numRatings: 20, 
+    date: "2021-04-12T03:19Z",
+    description: "Connie is dressed in her Easter finest. Who could deny her beauty?"
+  },
+  {
+    id: 114,
+    name:"Izzy",
+    image: image114,
+    enterContest: true, 
+    breed: 23,
+    rating: 3.9,
+    numRatings: 20, 
+    date: "2021-04-11T03:19Z",
+    description: "Izzy is just planting her feet into the ground. If she stays there much longer, she's going to water the plants... in a bad way."
+  },
+  {
+    id: 115,
+    name:"Charro",
+    image: image115,
+    enterContest: true, 
+    breed: 9,
+    rating: 4.4,
+    numRatings: 20, 
+    date: "2021-04-14T08:19Z",
+    description: "Why do humans keep putting this stuff on me? I'll do whatever they want as long as I get chicken."
+  },
+  {
+    id: 116,
+    name:"Parker",
+    image: image116,
+    enterContest: true, 
+    breed: 5,
+    rating: 3.7,
+    numRatings: 20, 
+    date: "2021-04-01T11:19Z",
+    description: "I'm as pretty as a daisy, and I smell like one too. Honestly."
+  },
+  {
+    id: 117,
+    name:"Gus",
+    image: image117,
+    enterContest: true, 
+    breed: 21,
+    rating: 4.0,
+    numRatings: 17, 
+    date: "2021-04-01T07:19Z",
+    description: "How about a nice sloppy kiss!"
+  },
+  {
+    id: 118,
+    name:"Timmy",
+    image: image118,
+    enterContest: true, 
+    breed: 20,
+    rating: 4.3,
+    numRatings: 20, 
+    date: "2021-04-07T08:19Z",
+    description: "Aloha! I'm just going to pretend that it's totally normal for me to wear pants and a shirt. At least my ears are looking good!"
+    
+  },
+  {
+    id: 119,
+    name:"Cleo",
+    image: image119,
+    enterContest: true, 
+    breed: 14,
+    rating: 4.1,
+    numRatings: 20, 
+    date: "2021-04-10T07:19Z",
+    description: "Miss Cleopatra is a fast runner and a great protector for our home and family. Nothing gets by her!"
+  },
+  {
+    id: 120,
+    name:"Foster",
+    image: image120,
+    enterContest: false, 
+    breed: 18,
+    rating: 4.1,
+    numRatings: 20, 
+    date: "2021-04-15T03:19Z",
+    description: "Foster is a yellow lab sweetheart. He likes to play fetch all day."
+  },
+  {
+    id: 121,
+    name:"Killer",
+    image: image121,
+    enterContest: false, 
+    breed: 29,
+    rating: 3.9,
+    numRatings: 13, 
+    date: "2021-04-15T04:19Z",
+    description: "He really doesn't know that he's only 5 lbs wet. This guy will take on any dog that comes his way."
+  },
+  {
+    id: 122,
+    name:"Sadie",
+    image: image122,
+    enterContest: false, 
+    breed: 23,
+    rating: 3.5,
+    numRatings: 20, 
+    date: "2021-04-15T12:19Z",
+    description: "Sadie is a high maintenance pup. She gets groomed every month and isists on getting brushed out every night. What a sweet little pain!"
+  },
+  {
+    id: 123,
+    name:"Benjamin",
+    image: image123,
+    enterContest: false, 
+    breed: 4,
+    rating: 4.0,
+    numRatings: 20, 
+    date: "2021-04-15T02:19Z",
+    description: "Ever hear of letting sleeping dogs lie? Well, take a hint!"
+  },
+  {
+    id: 124,
+    name:"Melanie",
+    image: image124,
+    enterContest: false, 
+    breed: 6,
+    rating: 3.9,
+    numRatings: 20, 
+    date: "2021-04-15T04:19Z",
+    description: "If you get a Cairn Terrier, be sure to give them lots of space to run around. They have to purge that Terrier energy or they get themselves into trouble."
   }
 ];

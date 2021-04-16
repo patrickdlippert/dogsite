@@ -9,7 +9,7 @@ export const SPONSORS = [
         name: "Chewy.com",
         displayName: false,
         image: imageS0,
-        featured: false,
+        featured: true,
         description: "Pet products online",
         url: 'https://www.chewy.com/'
     },

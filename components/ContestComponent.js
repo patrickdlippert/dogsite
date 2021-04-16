@@ -1,17 +1,14 @@
 import React, { Component } from 'react'
-import { View, Text, ImageBackground, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native';
+import { View, Text, ImageBackground, StyleSheet, TouchableOpacity, Linking} from 'react-native';
 import { Button, Card, Icon } from 'react-native-elements';
 import { FlatGrid } from 'react-native-super-grid';
 import * as Animatable from 'react-native-animatable';
 import { connect } from 'react-redux';
-import AdCarousel from './AdCarouselComponent';
 
 
 const mapStateToProps = state => {
     return {
         dogs: state.dogs,
-        breeds: state.breeds,
-        favorites: state.favorites,
         sponsors: state.sponsors
     };
 };
@@ -22,26 +19,38 @@ class Contest extends Component {
     render() {
         const { navigate } = this.props.navigation;
 
-        const pageData = [...this.props.dogs.dogs].sort((a, b) => new Date(b.date) - new Date(a.date)).filter(dog => (dog.enterContest));
-        const breeds = this.props.breeds.breeds;
-        const dog = [...pageData].sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating)).filter(dog => (dog.rating > 0))[0];
-        //const dog = pageData[0];
-        const needsUri = dog.image.toString().includes('.png'); // Check for full file path vs imported image
+        const now = new Date();
+        const startDate= new Date(now.getFullYear(), now.getMonth() - 1, 1).toJSON();
+        const endDate = new Date(now.getFullYear(), now.getMonth(), 0).toJSON();
 
-        //pageData=this.props.dogs.dogs.filter(
-        //    dog => this.props.favorites.includes(dog.id)
-        //);
+
+        // Find all dogs entered into the contest last month
+        const dogsLastMonth = this.props.dogs.dogs.filter(dog => ((dog.date >= startDate && dog.date <= endDate) && dog.enterContest));
+        
+        // Find the highest rated dog out of this group
+        const dog = [...dogsLastMonth].sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating)).filter(dog => (dog.rating > 0))[0];
+
+        // Find all dogs entered in the contest this month
+        const dogsThisMonth = this.props.dogs.dogs.filter(dog => ((dog.date > endDate) && dog.enterContest));
+        // Sort these dogs in order, newest first
+        const pageData = [...dogsThisMonth].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+
+        const needsUri = dog.image.toString().includes('.png'); // Check for full file path vs imported image
+        // Find the featured sponsor for the contest
+        const sponsor = this.props.sponsors.sponsors.filter(sponsor => sponsor.featured)[0];
+
 
         const getHeader = () => {
             return(
                 <Animatable.View 
-                animation='tada'
-                duration={2000}
-                delay={500}
-                margin={20}
+                    animation='tada'
+                    duration={2000}
+                    delay={500}
+                    marginBottom={5}
                 >
                 <Card>
-                    <Card.Title>Winner of last month's contest!</Card.Title>
+                    <Card.Title style={styles.title}>Winner of last month's contest!</Card.Title>
                     <Text style={[styles.title, { color: '#9020d1', textAlign: 'center'}]}>
                         {dog.name}
                     </Text>
@@ -55,7 +64,7 @@ class Contest extends Component {
                         animation='bounceInUp'
                         duration={3000}
                         delay={1000}
-                        style={{position: 'absolute', top: 200, left: 0, right: 200, bottom: 0}}>
+                        style={{position: 'absolute', top: 220, left: 0, right: 220, bottom: 0}}>
                             <Icon
                                 name='trophy'
                                 type='font-awesome'
@@ -66,18 +75,19 @@ class Contest extends Component {
 
                     </View>
 
-                    {/* Beneath the image, display the description/comment that was submitted with the
-                        image. This is followed by the dog's breed that was selected at upload time.
+                    {/* Beneath the image, display the sponsor's image, description/comment that was submitted with the
+                        image. 
                     */}
-
+                    <TouchableOpacity onPress={ ()=>{ Linking.openURL(`${sponsor.url}`)}}>
+                        <ImageBackground source={sponsor.image} style={styles.sponsorImage}/>
+                    </TouchableOpacity>
+       
                     <Text style={{margin: 10}}>
                         {dog.description}
                     </Text>
+
                     <Text style={{margin: 10}}>
-                        Dog Breed: {breeds[dog.breed].name}
-                    </Text>
-                    <Text style={{margin: 10}}>
-                        Submit your dawg by checking the entry box on the profile tab. Here are the latest entries for this month's pageant. Good luck!
+                        Submit your dawg by checking the entry box on the profile tab.  The winner receives a year's supply of pet food compliments of {sponsor.name}. Good luck! Here are the latest entries for this month's pageant.
                     </Text>
                 </Card>
                 </Animatable.View>
@@ -174,11 +184,6 @@ const styles = StyleSheet.create({
         textShadowRadius: 3, 
         fontWeight: '800'
     },
-    itemCode: {
-        fontWeight: '600',
-        fontSize: 12,
-        color: '#fff',
-    },
     cardContainer: {
         borderRadius: 5,
         padding: 0,
@@ -193,9 +198,15 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 5
     },
+    sponsorImage: {
+        alignSelf: 'center',
+        height: 54,
+        width: 288,
+        margin: 0
+    },
     title: {
-        marginVertical: 5,
-        fontSize: 22,
+        marginBottom: 5,
+        fontSize: 20,
         fontWeight: 'bold'
     }
 });
