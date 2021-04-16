@@ -1373,14 +1373,14 @@ export const DOGS = [
   },
   {
     id: 113,
-    name:"Connie",
+    name:"Gwen",
     image: image113,
     enterContest: true, 
-    breed: 20,
-    rating: 4.1,
-    numRatings: 20, 
+    breed: 30,
+    rating: 3.6,
+    numRatings: 24, 
     date: "2021-04-12T03:19Z",
-    description: "Connie is dressed in her Easter finest. Who could deny her beauty?"
+    description: "Gwen has a rosey disposition!"
   },
   {
     id: 114,
