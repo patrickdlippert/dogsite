@@ -50,16 +50,20 @@ class Contest extends Component {
                         ? <ImageBackground source={{uri: dog.image}} style={styles.cardImage}/>
                         : <ImageBackground source={dog.image} style={styles.cardImage}/>
                         }
-                        <View style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 245}}>
+                        
+                        <Animatable.View 
+                        animation='bounceOutUp'
+                        duration={3000}
+                        delay={1000}
+                        style={{position: 'absolute', top: 100, left: 0, right: 0, bottom: 0}}>
                             <Icon
                                 name='trophy'
                                 type='font-awesome'
                                 color='#f1c410'
-                                size={32}
-                                raised
-
+                                size={96}
                                 />
-                        </View>
+                        </Animatable.View>
+
                     </View>
 
                     {/* Beneath the image, display the description/comment that was submitted with the

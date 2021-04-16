@@ -822,7 +822,7 @@ export const DOGS = [
     image: image63,
     enterContest: false, 
     breed: 27,
-    rating: 4.5,
+    rating: 4.6,
     numRatings: 20, 
     date: "2021-01-05T09:19Z",
     description: "Shorty is one playful Corgi pup."
