@@ -1,11 +1,12 @@
 import * as ActionTypes from './ActionTypes';
 
-export const postDog = (image, name, breed, description) => dispatch => {
+export const postDog = (image, name, breed, description, enterContest) => dispatch => {
     const newDog = {
         image,
         name,
         breed,
-        description
+        description,
+        enterContest
     };
 
     setTimeout(() => {

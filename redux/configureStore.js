@@ -28,7 +28,7 @@ export const ConfigureStore = () => {
     );
 
     const persistor = persistStore(store);
-    persistor.purge();
+    //persistor.purge();
 
     return { persistor, store };
 }

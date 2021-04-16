@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, ScrollView, Alert, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
-import { Button } from 'react-native-elements';
+import { Button, CheckBox } from 'react-native-elements';
 import {Picker} from '@react-native-picker/picker';
 import * as ImagePicker from 'expo-image-picker';
 import * as Permissions from 'expo-permissions';
@@ -17,7 +17,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-    postDog: (imageurl, dogname, dogbreed, comment) => (postDog(imageurl, dogname, dogbreed, comment))
+    postDog: (imageurl, dogname, dogbreed, comment, enterContest) => (postDog(imageurl, dogname, dogbreed, comment, enterContest))
 };
 
 class ProfileEditor extends Component {
@@ -29,7 +29,8 @@ class ProfileEditor extends Component {
             imageUrl: '',
             dogName: '',
             dogBreed: '',
-            comment: ''
+            comment: '',
+            enterContest: false,
         };
     }
 
@@ -91,7 +92,7 @@ class ProfileEditor extends Component {
                 { cancelable: false }
             );
         } else {
-            this.props.postDog(this.state.imageUrl, this.state.dogName, this.state.dogBreed, this.state.comment);
+            this.props.postDog(this.state.imageUrl, this.state.dogName, this.state.dogBreed, this.state.comment, this.state.enterContest);
             Alert.alert(
                 "Profile Submitted",
                 "You're all set! Your dog profile will be posted momentarily.",
@@ -112,7 +113,8 @@ class ProfileEditor extends Component {
             imageUrl: '',
             dogName: '',
             dogBreed: '',
-            comment: '' 
+            comment: '',
+            enterContest: false 
         });
     }
 
@@ -245,6 +247,27 @@ class ProfileEditor extends Component {
                     value = {this.state.comment}
                 />
             </View>
+
+            <View style={styles.formRow}>
+                <CheckBox
+                    title={ 
+                        <Text>
+                            <Text>Check to enter this month's Pooch Parade contest.</Text>
+                            <Text
+                                style={{color: '#5637DD' }} 
+                                onPress={() => console.log('display rules')}> Official Rules.
+                            </Text>
+                        </Text>
+                    }
+
+                    center
+                    checkedColor='#5637DD'
+                    checked={this.state.enterContest}
+                    onPress={() => this.setState({enterContest: !this.state.enterContest})}
+                    containerStyle={styles.formCheckbox}
+                />
+            </View>
+
             <View style={styles.buttonSection}>
                 <Button
                  buttonStyle={styles.buttonSubmit}

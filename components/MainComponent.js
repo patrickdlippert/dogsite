@@ -9,6 +9,8 @@ import DogDetail from './DogDetailComponent';
 import FullList from './FullListComponent';
 import ProfileEditor from './ProfileEditorComponent';
 import Favorites from './FavoritesComponent';
+import Contest from './ContestComponent';
+import Settings from './SettingsComponent';
 
 LogBox.ignoreLogs(['Your project is accessing the following APIs from a deprecated global rather than a module import: Constants (expo-constants).']);
 
@@ -108,13 +110,35 @@ class Main extends Component {
             headerTitle: '',
             headerLeft: props => <LogoTitle {...props} />,
             headerRight: () => (
-              <View style={{ marginRight: 10}}>
+              <View style={{ 
+                marginRight: 10,
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center"
+                }}>
                 <Icon
+                  containerStyle={{marginLeft:10}}
+                  name='trophy'
+                  type='font-awesome'
+                  color='#f1c410'
+                  size={28}
+                  onPress={() => navigation.navigate('ContestModal')}
+                />
+                <Icon
+                  containerStyle={{marginLeft:10}}
                   name='heart'
                   type='font-awesome'
                   color='tomato'
                   size={28}
-                  onPress={() => navigation.navigate('MyModal')}
+                  onPress={() => navigation.navigate('FavoritesModal')}
+                />
+                <Icon
+                  containerStyle={{marginLeft:10}}
+                  name='cog'
+                  type='font-awesome'
+                  color='#808080'
+                  size={28}
+                  onPress={() => navigation.navigate('SettingsModal')}
                 />
               </View>
             )
@@ -123,10 +147,32 @@ class Main extends Component {
 
 
             <RootStack.Screen name="Tab" component={TabNavScreen}  />
-            <RootStack.Screen name="MyModal" component={Favorites}
+            <RootStack.Screen name="FavoritesModal" component={Favorites}
               options={({route, navigation}) => ({
                  headerStyle: { backgroundColor: '#d5fafa'},
                  headerTitle: "My Favorites", 
+                 headerTitleAlign: 'center',
+                 headerLeft: () => ( <Text style={styles.textLink} onPress={ () => { navigation.navigate('Tab')}}>Done</Text>),
+                 headerRight:''
+                })
+              }    
+            />
+
+            <RootStack.Screen name="ContestModal" component={Contest}
+              options={({route, navigation}) => ({
+                 headerStyle: { backgroundColor: '#d5fafa'},
+                 headerTitle: "Dawg Contest", 
+                 headerTitleAlign: 'center',
+                 headerLeft: () => ( <Text style={styles.textLink} onPress={ () => { navigation.navigate('Tab')}}>Done</Text>),
+                 headerRight:''
+                })
+              }    
+            />
+
+            <RootStack.Screen name="SettingsModal" component={Settings}
+              options={({route, navigation}) => ({
+                 headerStyle: { backgroundColor: '#d5fafa'},
+                 headerTitle: "Settings", 
                  headerTitleAlign: 'center',
                  headerLeft: () => ( <Text style={styles.textLink} onPress={ () => { navigation.navigate('Tab')}}>Done</Text>),
                  headerRight:''
