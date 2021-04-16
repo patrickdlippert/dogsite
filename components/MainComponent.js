@@ -161,7 +161,7 @@ class Main extends Component {
             <RootStack.Screen name="ContestModal" component={Contest}
               options={({route, navigation}) => ({
                  headerStyle: { backgroundColor: '#d5fafa'},
-                 headerTitle: "Dawg Contest", 
+                 headerTitle: "Pooch Pageant", 
                  headerTitleAlign: 'center',
                  headerLeft: () => ( <Text style={styles.textLink} onPress={ () => { navigation.navigate('Tab')}}>Done</Text>),
                  headerRight:''

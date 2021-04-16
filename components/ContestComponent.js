@@ -77,7 +77,7 @@ class Contest extends Component {
                         Dog Breed: {breeds[dog.breed].name}
                     </Text>
                     <Text style={{margin: 10}}>
-                        Here are the latest contest entries for this month.
+                        Submit your dawg by checking the entry box on the profile tab. Here are the latest entries for this month's pageant. Good luck!
                     </Text>
                 </Card>
                 </Animatable.View>
