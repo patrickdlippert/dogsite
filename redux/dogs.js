@@ -5,6 +5,7 @@ export const dogs = (state = { isLoading: true,
                                 errMess: null,
                                 dogs: DOGS}, action) => {
     switch (action.type) {
+
         case ActionTypes.ADD_DOG:
             const dog = action.payload;
 

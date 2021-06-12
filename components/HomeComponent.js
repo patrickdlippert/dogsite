@@ -40,7 +40,7 @@ class Home extends Component {
     render() {
         const { navigate } = this.props.navigation;
         const renderImageItem = ({item}) => {
-          const needsUri = item.image.toString().includes('.png'); // Check for full file path vs imported image
+          const needsUri = item.image.toString().includes('http'); // Check for full file path vs imported image
 
             return (
                 <View style={styles.itemContainer}>

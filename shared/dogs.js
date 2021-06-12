@@ -1236,7 +1236,7 @@ export const DOGS = [
     breed: 30,
     rating: 4.3,
     numRatings: 20, 
-    date: "2021-03-12T03:19Z",
+    date: "2021-05-12T03:19Z",
     description: "Lucille is our little social butterfly this Spring. She loves to play with the kids in the yard."
   },
   {
@@ -1247,7 +1247,7 @@ export const DOGS = [
     breed: 21,
     rating: 3.4,
     numRatings: 20, 
-    date: "2021-03-11T03:19Z",
+    date: "2021-05-11T03:19Z",
     description: "Archie may not look all that happy on the outside, but I swear that he loves dressing up for spring."
   },
   {
@@ -1269,7 +1269,7 @@ export const DOGS = [
     breed: 20,
     rating: 4.1,
     numRatings: 20, 
-    date: "2021-03-22T03:19Z",
+    date: "2021-05-22T03:19Z",
     description: "Connie is dressed in her Easter finest. Who could deny her beauty?"
   },
   {
@@ -1291,7 +1291,7 @@ export const DOGS = [
     breed: 17,
     rating: 4.4,
     numRatings: 20, 
-    date: "2021-03-29T08:19Z",
+    date: "2021-05-29T08:19Z",
     description: "I'm the Easter Bunny you always wanted. Oops... I think I ate the Cadbury Bunny! -McLovin"
   },
   {
@@ -1302,7 +1302,7 @@ export const DOGS = [
     breed: 2,
     rating: 3.7,
     numRatings: 20, 
-    date: "2021-04-01T11:19Z",
+    date: "2021-06-01T11:19Z",
     description: "Shannon is our little snail... always digging around the garden."
   },
   {
@@ -1313,7 +1313,7 @@ export const DOGS = [
     breed: 28,
     rating: 4.0,
     numRatings: 20, 
-    date: "2021-04-02T07:19Z",
+    date: "2021-06-02T07:19Z",
     description: "Winter is white as snow, but she's really a summer dog."
   },
   {
@@ -1324,7 +1324,7 @@ export const DOGS = [
     breed: 26,
     rating: 3.8,
     numRatings: 20, 
-    date: "2021-04-14T08:19Z",
+    date: "2021-06-14T08:19Z",
     description: "Just chillin' outdoors this time of year."
   },
   {
@@ -1335,7 +1335,7 @@ export const DOGS = [
     breed: 15,
     rating: 4.2,
     numRatings: 15, 
-    date: "2021-04-06T07:19Z",
+    date: "2021-06-06T07:19Z",
     description: "Remember to hydrate and bring sunscreen. I'm a ginger, afterall!"
   },
   {
@@ -1346,7 +1346,7 @@ export const DOGS = [
     breed: 5,
     rating: 4.1,
     numRatings: 20, 
-    date: "2021-04-12T03:19Z",
+    date: "2021-06-12T03:19Z",
     description: "Barton is an all-American Bulldog. He's not afraid of fireworks at all!"
   },
   {
@@ -1379,7 +1379,7 @@ export const DOGS = [
     breed: 30,
     rating: 3.6,
     numRatings: 24, 
-    date: "2021-04-12T03:19Z",
+    date: "2021-06-12T03:19Z",
     description: "Gwen has a rosey disposition!"
   },
   {
@@ -1390,7 +1390,7 @@ export const DOGS = [
     breed: 23,
     rating: 3.9,
     numRatings: 20, 
-    date: "2021-04-11T03:19Z",
+    date: "2021-06-11T03:19Z",
     description: "Izzy is just planting her feet into the ground. If she stays there much longer, she's going to water the plants... in a bad way."
   },
   {
@@ -1401,7 +1401,7 @@ export const DOGS = [
     breed: 9,
     rating: 4.4,
     numRatings: 20, 
-    date: "2021-04-14T08:19Z",
+    date: "2021-06-14T08:19Z",
     description: "Why do humans keep putting this stuff on me? I'll do whatever they want as long as I get chicken."
   },
   {
@@ -1412,7 +1412,7 @@ export const DOGS = [
     breed: 5,
     rating: 3.7,
     numRatings: 20, 
-    date: "2021-04-01T11:19Z",
+    date: "2021-06-01T11:19Z",
     description: "I'm as pretty as a daisy, and I smell like one too. Honestly."
   },
   {
@@ -1423,7 +1423,7 @@ export const DOGS = [
     breed: 21,
     rating: 4.0,
     numRatings: 17, 
-    date: "2021-04-01T07:19Z",
+    date: "2021-06-01T07:19Z",
     description: "How about a nice sloppy kiss!"
   },
   {
@@ -1434,7 +1434,7 @@ export const DOGS = [
     breed: 20,
     rating: 4.3,
     numRatings: 20, 
-    date: "2021-04-07T08:19Z",
+    date: "2021-06-07T08:19Z",
     description: "Aloha! I'm just going to pretend that it's totally normal for me to wear pants and a shirt. At least my ears are looking good!"
     
   },
@@ -1446,7 +1446,7 @@ export const DOGS = [
     breed: 14,
     rating: 4.1,
     numRatings: 20, 
-    date: "2021-04-10T07:19Z",
+    date: "2021-06-10T07:19Z",
     description: "Miss Cleopatra is a fast runner and a great protector for our home and family. Nothing gets by her!"
   },
   {
@@ -1457,7 +1457,7 @@ export const DOGS = [
     breed: 18,
     rating: 4.1,
     numRatings: 20, 
-    date: "2021-04-15T03:19Z",
+    date: "2021-06-15T03:19Z",
     description: "Foster is a yellow lab sweetheart. He likes to play fetch all day."
   },
   {
@@ -1468,7 +1468,7 @@ export const DOGS = [
     breed: 29,
     rating: 3.9,
     numRatings: 13, 
-    date: "2021-04-15T04:19Z",
+    date: "2021-06-15T04:19Z",
     description: "He really doesn't know that he's only 5 lbs wet. This guy will take on any dog that comes his way."
   },
   {
@@ -1479,7 +1479,7 @@ export const DOGS = [
     breed: 23,
     rating: 3.5,
     numRatings: 20, 
-    date: "2021-04-15T12:19Z",
+    date: "2021-06-15T12:19Z",
     description: "Sadie is a high maintenance pup. She gets groomed every month and insists on getting brushed out every night. What a sweet little pain!"
   },
   {
@@ -1490,7 +1490,7 @@ export const DOGS = [
     breed: 4,
     rating: 4.0,
     numRatings: 20, 
-    date: "2021-04-15T02:19Z",
+    date: "2021-06-15T02:19Z",
     description: "Ever hear of letting sleeping dogs lie? Well, take a hint!"
   },
   {
@@ -1501,7 +1501,7 @@ export const DOGS = [
     breed: 6,
     rating: 3.9,
     numRatings: 20, 
-    date: "2021-04-15T04:19Z",
+    date: "2021-06-15T04:19Z",
     description: "If you get a Cairn Terrier, be sure to give them lots of space to run around. They have to purge that Terrier energy or they get themselves into trouble."
   }
 ];

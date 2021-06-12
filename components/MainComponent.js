@@ -69,8 +69,6 @@ function ProfileStackScreen() {
 }
 
 
-
-
 const Tab = createMaterialTopTabNavigator();
 
 function TabNavScreen() {

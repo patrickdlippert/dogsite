@@ -86,7 +86,7 @@ class Contest extends Component {
                         {dog.description}
                     </Text>
 
-                    <Text style={{margin: 10}}>
+                    <Text style={{margin: 5}}>
                         Submit your dawg by checking the entry box on the profile tab.  The winner receives a year's supply of pet food compliments of {sponsor.name}!{"\n\n"}
                         Here are the latest entries for this month's pageant:
                     </Text>
